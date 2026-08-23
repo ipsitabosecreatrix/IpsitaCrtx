@@ -2,9 +2,10 @@
 import '../styles/global.css';
 
 const {
-  title = 'Ipsita Bose — Portfolio',
+  title = 'Ipsita Bose | CRTX',
   description = '3D, motion and visual design portfolio by Ipsita Bose.'
 } = Astro.props;
+const socialImage = 'https://ipsitacrtx.pages.dev//images/preview.png';
 ---
 <!doctype html>
 <html lang="en">
@@ -13,6 +14,9 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#111216" />
+    <meta property="og:image" content={socialImage} />
+    <meta name="twitter:image" content={socialImage} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <title>{title}</title>
   </head>
   <body>
