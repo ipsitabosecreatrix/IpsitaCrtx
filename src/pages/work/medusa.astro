@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import MedusaViewer from '../../components/MedusaViewer.astro';
+---
+
+<BaseLayout
+  title="Medusa — Ipsita Bose"
+  description="Medusa, a 3D tattoo machine visualization and interactive web project by Ipsita Bose."
+>
+  <Header active="work" />
+
+  <main>
+    <section class="case-hero shell">
+      <div class="case-hero__copy">
+        <p class="breadcrumb">3D <i>/</i> Product Visualization <i>/</i> Interactive</p>
+        <h1 class="display">Medusa</h1>
+        <p class="case-kicker">A rotary tattoo machine shaped by serpentine movement.</p>
+        <p class="case-intro">  Medusa is a functional rotary tattoo machine that I designed, fabricated and later translated into an interactive 3D experience. Inspired by the muscular movement of a serpent, it combines mechanical construction with an organic, scaled visual language.</p>
+
+        <dl class="case-meta">
+          <div><dt>Area</dt><dd>3D · Product Design · Interaction</dd></div>
+          <div><dt>Focus</dt><dd>Form · Ergonomics · Mechanical Detail</dd></div>
+          <div><dt>Tools</dt><dd>Blender · ThreeJS</dd></div>
+        </dl>
+
+        <a class="button" href="#overview">Explore the process <span>↓</span></a>
+      </div>
+
+      <div class="case-hero__media case-hero__viewer" id="interactive">
+        <MedusaViewer />
+      </div>
+    </section>
+
+  <section class="case-section shell split-section" id="overview">
+    <div>
+      <p class="eyebrow">Project overview</p>
+      <h2 class="display">A machine with a mythology.</h2>
+    </div>
+
+    <div class="case-overview__copy">
+      <p>
+        Medusa is a functional rotary tattoo machine that I designed and
+        physically built as an intersection of two parts of my practice:
+        engineering and tattooing.
+      </p>
+
+      <p>
+        The machine uses a 12V DC motor, with a body constructed from PVC
+        tubing, epoxy and binding wire. The skeletal structure was formed
+        in wire before being built up with epoxy, allowing the outer body
+        and individual scales to take on the muscular, serpentine character
+        that defines Medusa.
+      </p>
+    </div>
+  </section>
+
+    <section class="case-section shell">
+      <div class="section-heading">
+        <p class="eyebrow">Process & exploration</p>
+        <div class="section-rule"><span>⌁</span></div>
+      </div>
+
+      <div class="process-grid">
+
+        <article class="process-card">
+          <div class="process-card__media">
+            <img
+              src="/images/ProcessMedusa/concept.png"
+              alt="Original concept sketch for the Medusa rotary tattoo machine"
+            />
+          </div>
+
+          <div class="process-card__content">
+            <span>01</span>
+            <strong>Concept</strong>
+          </div>
+        </article>
+
+
+        <article class="process-card">
+          <div class="process-card__media">
+            <img
+              src="/images/ProcessMedusa/fabrication.png"
+              alt="Medusa tattoo machine during physical fabrication"
+            />
+          </div>
+
+          <div class="process-card__content">
+            <span>02</span>
+            <strong>Fabrication</strong>
+          </div>
+        </article>
+
+
+        <article class="process-card">
+          <div class="process-card__media">
+            <img
+              src="/images/ProcessMedusa/functionalprototype.png"
+              alt="Completed functional Medusa rotary tattoo machine connected to its power system"
+            />
+          </div>
+
+          <div class="process-card__content">
+            <span>03</span>
+            <strong>Functional Prototype</strong>
+          </div>
+        </article>
+
+
+        <article class="process-card">
+          <div class="process-card__media">
+            <img
+              src="/images/ProcessMedusa/digitalreconstruction.png"
+              alt="Wireframe view of the Medusa tattoo machine reconstructed in Blender"
+            />
+          </div>
+
+          <div class="process-card__content">
+            <span>04</span>
+            <strong>Digital Reconstruction</strong>
+          </div>
+        </article>
+
+
+        <article class="process-card">
+          <div class="process-card__media">
+            <img
+              src="/images/ProcessMedusa/finalrender.png"
+              alt="Final 3D visualization of the Medusa rotary tattoo machine"
+            />
+          </div>
+
+          <div class="process-card__content">
+            <span>05</span>
+            <strong>Final Visualization</strong>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+  </main>
+</BaseLayout>

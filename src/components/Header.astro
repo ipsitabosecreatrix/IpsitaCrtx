@@ -1,0 +1,23 @@
+---
+const { active = '' } = Astro.props;
+const links = [
+  ['Work', '/#work'],
+  ['About', '/about'],
+  ['Resume', '/resume'],
+  ['Contact', '/contact']
+];
+---
+<header class="site-header shell">
+  <a href="/" class="wordmark" aria-label="Ipsita Bose — Home">
+    <img
+      src="/images/ipsita-logo.svg"
+      alt="Ipsita Bose"
+      class="wordmark__image"
+    />
+  </a>
+  <nav aria-label="Primary navigation">
+    {links.map(([label, href]) => (
+      <a class:list={['nav-link', active === label.toLowerCase() && 'is-active']} href={href}>{label}</a>
+    ))}
+  </nav>
+</header>

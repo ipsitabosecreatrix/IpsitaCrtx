@@ -1,0 +1,21 @@
+---
+import '../styles/global.css';
+
+const {
+  title = 'Ipsita Bose — Portfolio',
+  description = '3D, motion and visual design portfolio by Ipsita Bose.'
+} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#111216" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
