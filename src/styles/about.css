@@ -1,0 +1,519 @@
+
+/* =========================================================
+   ABOUT PAGE
+   ========================================================= */
+
+.about-page {
+  overflow: hidden;
+}
+
+
+/* -------------------------
+   HERO
+   ------------------------- */
+
+.about-hero {
+  min-height: 690px;
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+
+  gap: 55px;
+
+  padding: 45px 0 70px;
+}
+
+.about-hero__copy {
+  position: relative;
+  z-index: 2;
+}
+
+.about-hero h1 {
+  margin: 18px 0 26px;
+
+  font-size: clamp(4.8rem, 8vw, 8.4rem);
+  line-height: 0.88;
+}
+
+.about-hero h1 span,
+.about-section h2 span {
+  display: block;
+
+  background: var(--gradient-brand);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.about-intro {
+  max-width: 50ch;
+
+  margin: 0 0 18px;
+
+  color: var(--text-soft);
+
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.about-intro--secondary {
+  color: var(--muted);
+}
+
+
+/* -------------------------
+   PORTRAIT
+   ------------------------- */
+
+.about-portrait {
+  position: relative;
+
+  aspect-ratio: 4 / 5;
+
+  max-width: 500px;
+
+  justify-self: end;
+
+  margin: 0;
+
+  overflow: hidden;
+
+  border: 1px solid var(--line);
+  border-radius: 24px;
+
+  background: var(--bg-soft);
+
+  box-shadow:
+    0 30px 80px var(--shadow);
+}
+
+.about-portrait::after {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(24, 17, 21, 0.32),
+      transparent 35%
+    );
+}
+
+.about-portrait img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* -------------------------
+   GENERAL SECTIONS
+   ------------------------- */
+
+.about-section {
+  padding: 80px 0;
+
+  border-top: 1px solid var(--line-neutral);
+}
+
+.about-section__heading {
+  max-width: 760px;
+
+  margin-bottom: 38px;
+}
+
+.about-section h2 {
+  margin: 12px 0 20px;
+
+  font-size: clamp(3.5rem, 6vw, 6.5rem);
+  line-height: 0.92;
+}
+
+
+/* -------------------------
+   THREE DISCIPLINES
+   ------------------------- */
+
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 14px;
+}
+
+.practice-card {
+  min-height: 290px;
+
+  padding: 30px;
+
+  border: 1px solid var(--line-neutral);
+  border-radius: var(--radius-card);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(154, 39, 85, 0.06),
+      rgba(157, 91, 155, 0.025)
+    );
+}
+
+.practice-card > span {
+  color: var(--hot-pink);
+
+  font-size: 0.72rem;
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+}
+
+.practice-card h3 {
+  margin: 45px 0 15px;
+
+  font-size: clamp(2.3rem, 3vw, 3.5rem);
+  line-height: 1;
+}
+
+.practice-card p {
+  margin: 0;
+
+  color: var(--muted);
+
+  line-height: 1.65;
+}
+
+
+/* -------------------------
+   CREATRIX
+   ------------------------- */
+
+.creatrix-section {
+  display: grid;
+
+  grid-template-columns:
+    minmax(280px, 0.85fr)
+    minmax(0, 1.15fr);
+
+  align-items: center;
+
+  gap: 70px;
+}
+
+.creatrix-mark {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.creatrix-mark img {
+  width: min(100%, 360px);
+  height: auto;
+
+  object-fit: contain;
+}
+
+.creatrix-copy {
+  max-width: 58ch;
+}
+
+.creatrix-copy p:not(.eyebrow) {
+  color: var(--muted);
+
+  line-height: 1.7;
+}
+
+
+/* -------------------------
+   SPLIT SECTIONS
+   ------------------------- */
+
+.split-about {
+  display: grid;
+
+  grid-template-columns: 0.85fr 1.15fr;
+
+  gap: 70px;
+}
+
+.about-copy {
+  align-self: center;
+
+  max-width: 62ch;
+}
+
+.about-copy p {
+  margin: 0 0 20px;
+
+  color: var(--muted);
+
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.about-copy strong {
+  color: var(--text);
+}
+
+
+/* -------------------------
+   EXPERIENCE
+   ------------------------- */
+
+.experience-logos {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+
+  gap: 34px 24px;
+
+  padding: 45px 0;
+
+  border-top: 1px solid var(--line-neutral);
+  border-bottom: 1px solid var(--line-neutral);
+}
+
+.experience-logo {
+  grid-column: span 2;
+
+  min-height: 95px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Centre the second row when there are 5 logos */
+.experience-logo:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.experience-logo:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+.experience-logo img {
+  width: auto;
+  max-width: 180px;
+  max-height: 60px;
+
+  object-fit: contain;
+
+  opacity: 0.72;
+
+  filter:
+    grayscale(1)
+    brightness(0)
+    invert(1);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.experience-logo:hover img {
+  opacity: 1;
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .about-hero {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+
+    gap: 28px;
+
+    padding: 28px 0 45px;
+  }
+
+  .about-portrait {
+    order: -1;
+
+    justify-self: center;
+
+    width: min(100%, 470px);
+  }
+
+  .practice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .practice-card {
+    min-height: auto;
+  }
+
+  .creatrix-section {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .creatrix-mark {
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 12px 0 6px;
+    }
+
+    .creatrix-mark img {
+        width: min(72%, 280px);
+        height: auto;
+    }
+
+  .split-about {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+  .creatrix-mark {
+    font-size: clamp(8rem, 30vw, 14rem);
+  }
+
+  .experience-logos {
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
+  }
+}
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+  .about-hero {
+    min-height: auto;
+
+    padding: 18px 0 30px;
+    gap: 24px;
+  }
+
+  .about-portrait {
+    width: 100%;
+    max-width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    border-radius: 18px;
+  }
+
+  .about-hero h1 {
+    margin: 12px 0 18px;
+
+    font-size: clamp(3.7rem, 16vw, 4.6rem);
+    line-height: 0.9;
+  }
+
+  .about-intro {
+    margin-bottom: 14px;
+
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .about-section {
+    padding: 28px 0;
+  }
+
+  .about-section__heading {
+    margin-bottom: 22px;
+  }
+
+  .about-section h2 {
+    margin: 8px 0 14px;
+
+    font-size: clamp(3rem, 14vw, 4.15rem);
+    line-height: 0.93;
+  }
+
+  .practice-grid {
+    gap: 10px;
+  }
+
+  .practice-card {
+    min-height: auto;
+
+    padding: 22px;
+  }
+
+  .practice-card h3 {
+    margin: 28px 0 12px;
+
+    font-size: 2.5rem;
+  }
+
+  .creatrix-section,
+  .split-about {
+    gap: 14px;
+  }
+
+  .creatrix-copy p:not(.eyebrow),
+  .about-copy p {
+    margin-bottom: 14px;
+
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .experience-logos {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+
+    padding: 28px 0;
+  }
+
+  .experience-logo {
+    min-height: 60px;
+  }
+
+  .experience-logo img {
+    max-width: 155px;
+    max-height: 48px;
+  }
+    .experience-logos {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    padding: 28px 0;
+  }
+
+  .experience-logo,
+  .experience-logo:nth-child(4),
+  .experience-logo:nth-child(5) {
+    grid-column: 1;
+
+    width: 100%;
+    min-height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    justify-self: stretch;
+  }
+
+  .experience-logo img {
+    width: auto;
+    max-width: 150px;
+    max-height: 52px;
+  }
+}

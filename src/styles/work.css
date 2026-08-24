@@ -1,0 +1,737 @@
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  min-height: 620px;
+
+  display: grid;
+  grid-template-columns: 0.92fr 1.08fr;
+  align-items: center;
+
+  gap: 30px;
+
+  padding: 30px 0 20px;
+}
+
+.hero__copy {
+  position: relative;
+
+  z-index: 4;
+}
+
+.hero h1 {
+  max-width: 760px;
+
+  margin:
+    18px 0 25px;
+
+  font-size:
+    clamp(4rem, 7vw, 7.4rem);
+
+  line-height:
+    0.9;
+}
+
+.hero h1 span,
+.cta h2 span {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero__discipline {
+  color:
+    var(--text-soft);
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.19em;
+
+  font-size:
+    0.82rem;
+
+  font-weight:
+    800;
+}
+
+.hero__discipline i {
+  color:
+    var(--accent-bright);
+
+  margin:
+    0 10px;
+
+  font-style:
+    normal;
+}
+
+/* =========================================================
+   HERO AVATAR VIDEO
+   ========================================================= */
+
+.hero__visual {
+  position: relative;
+
+  min-width: 0;
+  min-height: 580px;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  overflow: visible;
+}
+
+.hero__avatar {
+  display: block;
+
+  width: min(100%, 600px);
+  max-height: 650px;
+  height: auto;
+
+  object-fit: contain;
+  object-position: center bottom;
+
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      black 0%,
+      black 78%,
+      rgba(0, 0, 0, 0.85) 86%,
+      rgba(0, 0, 0, 0.45) 93%,
+      transparent 100%
+    );
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black 0%,
+      black 78%,
+      rgba(0, 0, 0, 0.85) 86%,
+      rgba(0, 0, 0, 0.45) 93%,
+      transparent 100%
+    );
+}
+
+.hero__avatar--desktop {
+  display: block;
+}
+
+.hero__avatar--mobile {
+  display: none;
+}
+
+/* =========================================================
+   SELECTED WORK
+   ========================================================= */
+
+.selected {
+  padding:
+    15px 0 50px;
+}
+
+.featured-grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap:
+    15px;
+}
+
+.cta__contact {
+  margin-top: 34px;
+}
+
+.cta__contact .eyebrow {
+  margin: 0 0 14px;
+}
+
+/* =========================================================
+   PROJECT CARDS
+   ========================================================= */
+
+.project-card {
+  min-width: 0;
+  overflow: hidden;
+
+  border: 1px solid var(--line-neutral);
+  border-radius: var(--radius-card);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(157, 91, 155, 0.025),
+      rgba(86, 12, 33, 0.025)
+    );
+}
+
+.medusa-card {
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.medusa-card:hover {
+  transform:
+    translateY(-7px);
+
+  border-color:
+    rgba(226, 82, 170, 0.56);
+
+  box-shadow:
+    0 18px 48px
+    rgba(86, 12, 33, 0.18);
+}
+
+
+.project-card__media {
+  position:
+    relative;
+
+  height:
+    280px;
+
+  overflow:
+    hidden;
+}
+
+
+.project-card__media img {
+  height:
+    100%;
+
+  object-fit:
+    cover;
+
+  transition:
+    transform 0.6s ease;
+}
+
+
+.medusa-card:hover img {
+  transform:
+    scale(1.04);
+}
+
+
+.project-card__sheen {
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent 30%,
+      rgba(226, 82, 170, 0.11) 44%,
+      rgba(242, 238, 241, 0.12) 48%,
+      rgba(157, 91, 155, 0.10) 53%,
+      transparent 65%
+    );
+
+  transform:
+    translateX(-120%);
+
+  transition:
+    transform 0.7s ease;
+}
+
+
+.medusa-card:hover
+.project-card__sheen {
+  transform:
+    translateX(120%);
+}
+
+
+.project-card__meta {
+  min-height:
+    118px;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    auto 1fr auto;
+
+  align-items:
+    end;
+
+  gap:
+    12px;
+
+  padding:
+    16px;
+}
+
+
+.project-card__meta h3 {
+  margin:
+    0 0 7px;
+
+  font-size:
+    2rem;
+
+  line-height:
+    1;
+}
+
+
+.project-card__meta p {
+  margin:
+    0;
+
+  color:
+    var(--muted);
+
+  font-size:
+    0.67rem;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.1em;
+}
+
+
+.project-index {
+  align-self:
+    start;
+
+  color:
+    var(--hot-pink);
+
+  font-size:
+    0.75rem;
+
+  font-weight:
+    800;
+}
+
+
+.project-arrow {
+  color:
+    var(--accent-bright);
+
+  font-size:
+    1.2rem;
+}
+
+
+/* =========================================================
+   PLACEHOLDER PROJECT VISUALS
+   ========================================================= */
+
+.placeholder-art {
+  position:
+    relative;
+
+  height:
+    280px;
+
+  overflow:
+    hidden;
+
+  background:
+    var(--bg-soft);
+}
+
+
+.placeholder-art::before {
+  content:
+    '';
+
+  position:
+    absolute;
+
+  inset:
+    15%;
+
+  border-radius:
+    20px;
+
+  filter:
+    blur(1px);
+}
+
+
+/* Spray dryer */
+
+.spray::before {
+  background:
+    radial-gradient(
+      circle at 50% 15%,
+      var(--silver),
+      var(--muted-dark) 27%,
+      var(--bg) 67%
+    );
+
+  clip-path:
+    polygon(
+      25% 0,
+      75% 0,
+      65% 75%,
+      55% 100%,
+      45% 100%,
+      35% 75%
+    );
+}
+
+
+/* Dairy */
+
+.dairy::before {
+  inset:
+    42% 8% 13%;
+
+  background:
+    linear-gradient(
+      90deg,
+
+      #2C292C 0 16%,
+
+      #69636B 17% 23%,
+
+      #21191F 24% 40%,
+
+      #5C525C 41% 50%,
+
+      #282129 51% 70%,
+
+      #817A83 71% 76%,
+
+      #292128 77%
+    );
+
+  box-shadow:
+    0 -28px 60px
+    rgba(161, 159, 165, 0.07);
+}
+
+
+/* Globe */
+
+.globe::before {
+  inset:
+    18%;
+
+  border-radius:
+    50%;
+
+  background:
+    radial-gradient(
+      circle at 32% 30%,
+
+      var(--pink),
+
+      var(--magenta) 25%,
+
+      var(--purple) 50%,
+
+      #151219 73%
+    );
+
+  box-shadow:
+    0 0 50px
+    rgba(157, 91, 155, 0.35);
+}
+
+
+/* =========================================================
+   COLLECTIONS
+   ========================================================= */
+
+.collections {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap:
+    0;
+
+  overflow:
+    hidden;
+
+  margin-top:
+    30px;
+
+  border:
+    1px solid var(--line);
+
+  border-radius:
+    18px;
+
+  background:
+    rgba(86, 12, 33, 0.025);
+}
+
+
+.collection-card {
+  min-height:
+    115px;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    auto 1fr auto;
+
+  align-items:
+    center;
+
+  gap:
+    14px;
+
+  padding:
+    24px;
+
+  border-right:
+    1px solid var(--line-neutral);
+
+  transition:
+    background 0.25s ease;
+}
+
+
+.collection-card:hover {
+  background:
+    rgba(154, 39, 85, 0.07);
+}
+
+
+.collection-card:last-child {
+  border-right:
+    0;
+}
+
+
+.collection-card span,
+.collection-card em {
+  color:
+    var(--accent-bright);
+
+  font-style:
+    normal;
+}
+
+
+.collection-card strong {
+  font-weight:
+    800;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.09em;
+
+  font-size:
+    0.76rem;
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.cta {
+  padding:
+    110px 0 65px;
+}
+
+.cta h2 {
+  margin:
+    12px 0 32px;
+
+  font-size:
+    clamp(4rem, 8vw, 8.5rem);
+
+  line-height:
+    0.9;
+}
+
+.cta__links {
+  display:
+    flex;
+
+  gap:
+    30px;
+
+  color:
+    var(--muted);
+}
+
+.cta__links a {
+  transition:
+    color 0.25s ease;
+}
+
+.cta__links a:hover {
+  color:
+    var(--accent-bright);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: 0;
+    padding: 20px 0 70px;
+  }
+
+  .hero__visual {
+    order: 1;
+    min-height: 500px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .hero__copy {
+    order: 2;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .hero__avatar {
+    width: min(72vw, 430px);
+    max-height: 500px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.5rem, 14vw, 6.4rem);
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .collections {
+    grid-template-columns: 1fr;
+  }
+
+  .collection-card {
+    border-right: 0;
+    border-bottom: 1px solid var(--line-neutral);
+  }
+
+  .collection-card:last-child {
+    border-bottom: 0;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 0 28px;
+  }
+
+  .selected {
+    padding-top: 18px;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    margin: 14px 0 22px;
+    font-size: clamp(3.55rem, 16vw, 4.25rem);
+    line-height: 0.88;
+  }
+
+  .hero__discipline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    font-size: 0.61rem;
+    letter-spacing: 0.11em;
+  }
+
+  .hero__discipline i {
+    margin: 0 3px;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card__media {
+    height: 360px;
+  }
+
+  .cta {
+    padding-top: 80px;
+  }
+
+  .cta h2 {
+    max-width: 100%;
+    font-size: clamp(3rem, 15vw, 4.25rem);
+  }
+
+  .hero__visual {
+    height: 400px;
+    min-height: 400px;
+    margin: 5px 0 20px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .hero__avatar--desktop {
+    display: none;
+  }
+
+  .hero__avatar--mobile {
+    display: block;
+
+    width: min(100%, 350px);
+    max-height: 400px;
+    height: auto;
+
+    object-fit: contain;
+    object-position: center bottom;
+
+    -webkit-mask-image:
+      linear-gradient(
+        to bottom,
+        black 0%,
+        black 72%,
+        rgba(0, 0, 0, 0.75) 84%,
+        rgba(0, 0, 0, 0.35) 93%,
+        transparent 100%
+      );
+
+    mask-image:
+      linear-gradient(
+        to bottom,
+        black 0%,
+        black 72%,
+        rgba(0, 0, 0, 0.75) 84%,
+        rgba(0, 0, 0, 0.35) 93%,
+        transparent 100%
+      );
+  }
+}

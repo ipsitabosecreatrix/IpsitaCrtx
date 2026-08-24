@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import MedusaCard from '../components/MedusaCard.astro';
+import '../styles/work.css';
 ---
 <BaseLayout title="Ipsita Bose | CRTX"  description="Perception Engineer & Multimedia Designer.">
   <Header active="work" />
@@ -84,11 +85,26 @@ import MedusaCard from '../components/MedusaCard.astro';
     </section>
 
     <section class="cta shell">
-      <p class="eyebrow">Let's create something</p>
-      <h2 class="display">Unforgettable.</h2>
-      <div class="cta__links">
-        <a href="mailto:YOUR_EMAIL_HERE">Email ↗</a>
-        <a href="YOUR_LINKEDIN_URL_HERE">LinkedIn ↗</a>
+      <h2 class="display">
+        Complex ideas deserve <span>better stories.</span>
+      </h2>
+
+      <div class="cta__contact">
+        <p class="eyebrow">Get in touch</p>
+
+        <div class="cta__links">
+          <a href="mailto:ipsitabose.creatrix@gmail.com">
+            Email ↗
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/ipsitacrtx/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn ↗
+          </a>
+        </div>
       </div>
     </section>
   </main>
