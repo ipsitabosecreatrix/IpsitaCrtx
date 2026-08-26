@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import '../styles/contact.css';
+---
+
+<BaseLayout
+  title="Contact | Ipsita Bose"
+  description="Contact Ipsita Bose for collaborations, creative work, technical storytelling and opportunities."
+>
+  <Header active="contact" />
+
+  <main class="contact-page">
+
+    <section class="contact-hero shell">
+
+      <div class="contact-hero__copy">
+        <p class="eyebrow">Contact</p>
+
+        <h1 class="display">
+          Let’s talk about<br />
+          <span>complex ideas.</span>
+        </h1>
+
+        <p class="contact-intro">
+          For collaborations, creative work, technical storytelling,
+          interactive experiences, or opportunities.
+        </p>
+      </div>
+
+      <div class="contact-links">
+
+        <a
+          href="mailto:ipsitabose.creatrix@gmail.com"
+          class="contact-link"
+        >
+          <div>
+            <span>Email</span>
+            <strong>ipsitabose.creatrix@gmail.com</strong>
+          </div>
+
+          <i>↗</i>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/ipsitacrtx/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-link"
+        >
+          <div>
+            <span>LinkedIn</span>
+            <strong>ipsitacrtx</strong>
+          </div>
+
+          <i>↗</i>
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</BaseLayout>
