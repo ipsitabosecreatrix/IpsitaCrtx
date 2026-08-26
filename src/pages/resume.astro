@@ -1,0 +1,663 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import '../styles/resume.css';
+
+
+const experience = [
+  {
+    company: 'Schneider Electric',
+    role: 'System & Architecture Engineer',
+    date: '02/2025 — Present',
+    description:
+      'Working across industrial automation, machine vision, enterprise software, UX/UI, frontend development, interactive visualization, 3D production and technical communication. My work connects physical machinery and automation logic with interfaces, visual systems and digital experiences that make complex machine states and software workflows understandable to people.',
+    areas: [
+      'Machine Vision',
+      'OCR Inspection',
+      'Cognex',
+      'Industrial Automation',
+      'OPC',
+      'MES / SCADA',
+      'UX/UI',
+      'Three.js',
+      'Interactive 3D',
+      'Digital Twins',
+      'Blender',
+      'Technical Storytelling',
+    ],
+  },
+
+  {
+    company: 'Schneider Electric',
+    role: 'Graduate Engineer Trainee',
+    date: '08/2024 — 01/2025',
+    description:
+      'Created digital experiences and visual communication for industrial automation, manufacturing software and smart-manufacturing applications. Worked across interface design, dashboards, 3D visualization, motion, technical graphics and multimedia production to translate engineering information into accessible user-facing experiences.',
+    areas: [
+      'Industrial Automation',
+      'UX/UI',
+      'Dashboard Design',
+      '3D Visualization',
+      'Blender',
+      'Motion Design',
+      'Graphic Design',
+      'Technical Communication',
+      'Multimedia Production',
+    ],
+  },
+
+  {
+    company: 'Schneider Electric',
+    role: 'Engineering Intern',
+    date: '01/2024 — 08/2024',
+    description:
+      'Supported industrial automation and software demonstrations through technical documentation, interface assets, presentations, graphic communication and 3D visualization, building an early practice at the intersection of engineering, design and communication.',
+    areas: [
+      'Industrial Automation',
+      'Electronics Engineering',
+      '3D Visualization',
+      'Interface Design',
+      'Graphic Design',
+      'Presentation Design',
+      'Technical Documentation',
+      'Technical Communication',
+    ],
+  },
+
+  {
+    company: 'The Six PM Show',
+    role: 'Creative Associate',
+    date: '08/2023 — 12/2023',
+    description:
+      'Created digital graphics, layouts, visual concepts, captions and audience-facing communication across digital content and brand communication. Worked with typography, composition, image treatment and platform-native design while developing a stronger understanding of storytelling and audience perception.',
+    areas: [
+      'Graphic Design',
+      'Digital Content',
+      'Visual Storytelling',
+      'Typography',
+      'Layout Design',
+      'Brand Communication',
+      'Content Creation',
+      'Audience Perception',
+    ],
+  },
+
+  {
+    company: 'Onnes Cryogenics',
+    role: 'Engineering Simulation Intern',
+    date: 'Project-Based Experience',
+    description:
+      'Developed MATLAB-based engineering projects exploring thermodynamic systems and mathematical modelling. Modelled Carnot-engine behaviour and quasistatic processes, translating heat, work, efficiency, pressure, volume and temperature relationships into programmable simulations and computational visualizations.',
+    areas: [
+      'MATLAB',
+      'Thermodynamics',
+      'Carnot Cycle',
+      'Quasistatic Processes',
+      'Mathematical Modelling',
+      'Engineering Simulation',
+      'Computational Engineering',
+      'Physics-Based Modelling',
+    ],
+  },
+
+  {
+    company: 'DEPICC',
+    role: 'Creative Associate',
+    date: '08/2020 — 12/2020',
+    description:
+      'Created posters, promotional graphics, vector assets and visual communication for client projects. Worked primarily in Adobe Illustrator, developing foundational skills in vector design, typography, composition, visual hierarchy and client-facing commercial design.',
+    areas: [
+      'Adobe Illustrator',
+      'Graphic Design',
+      'Vector Design',
+      'Poster Design',
+      'Typography',
+      'Layout Design',
+      'Visual Hierarchy',
+      'Client Design',
+    ],
+  },
+
+  {
+    company: 'Raveolution Studios',
+    role: 'Commercial Voice-Over Artist',
+    date: '2007 — 2015',
+    description:
+      'Recorded commercial voice-over for advertising and branded communication, adapting tone, pacing, emphasis and delivery to different scripts, audiences and campaign requirements. The experience built an early foundation in performance, script interpretation and audience perception that later carried into video, storytelling and multimedia communication.',
+    areas: [
+      'Commercial Voice-Over',
+      'Studio Recording',
+      'Script Interpretation',
+      'Vocal Delivery',
+      'Timing & Pacing',
+      'Tone Adaptation',
+      'Brand Communication',
+      'Audio Communication',
+    ],
+  },
+];
+
+
+const capabilities = [
+  {
+    number: '01',
+    title: 'Perception & Machine Vision',
+    skills: [
+      'Machine Vision',
+      'Industrial Vision Systems',
+      'OCR Inspection',
+      'Human-Machine Perception',
+      'Visual Inspection Workflows',
+      'Visual Feedback',
+      'Operator Interfaces',
+      'Information Visualization',
+      'Sensor-to-Interface Workflows',
+    ],
+  },
+
+  {
+    number: '02',
+    title: 'Engineering & Industrial Systems',
+    skills: [
+      'Electronics Engineering',
+      'Industrial Automation',
+      'PLC Ecosystems',
+      'OPC',
+      'MES',
+      'SCADA',
+      'HMI',
+      'Process Automation',
+      'Smart Manufacturing',
+      'Industrial Software',
+    ],
+  },
+
+  {
+    number: '03',
+    title: 'Simulation & Mathematical Modelling',
+    skills: [
+      'MATLAB',
+      'Thermodynamic Simulation',
+      'Carnot Cycle Analysis',
+      'Quasistatic Process Modelling',
+      'Mathematical Modelling',
+      'Computational Engineering',
+      'Physics-Based Simulation',
+    ],
+  },
+
+  {
+    number: '04',
+    title: '3D, Web & Interactive Systems',
+    skills: [
+      'Three.js',
+      'React',
+      'JavaScript',
+      'WebGL',
+      'GLTF',
+      'Blender',
+      'Interactive 3D',
+      'Spatial Interaction',
+      'Frontend Development',
+      'Responsive Interfaces',
+      'Digital Twins',
+    ],
+  },
+
+  {
+    number: '05',
+    title: 'UX/UI & Information Design',
+    skills: [
+      'Interaction Design',
+      'User Flows',
+      'Information Architecture',
+      'Industrial UX',
+      'Dashboard Design',
+      'High-Fidelity Interfaces',
+      'Data Visualization',
+      'Human Factors',
+      'Usability',
+    ],
+  },
+
+  {
+    number: '06',
+    title: 'Visual & Motion Communication',
+    skills: [
+      'Graphic Design',
+      'Vector Design',
+      'Motion Graphics',
+      'Video Production',
+      'Technical Animation',
+      'Product Demonstrations',
+      'Adobe Creative Suite',
+      'Visual Storytelling',
+    ],
+  },
+
+  {
+    number: '07',
+    title: 'Content, Storytelling & Voice',
+    skills: [
+      'Content Strategy',
+      'Creative Strategy',
+      'Technical Storytelling',
+      'Scriptwriting',
+      'Storyboarding',
+      'Voice-Over',
+      'Brand Communication',
+      'Audience Perception',
+    ],
+  },
+];
+
+
+const projects = [
+  {
+    title: 'Industrial Machine Vision Label Assurance System',
+    discipline:
+      'Machine Vision / Electronics / Industrial Automation / UX',
+    description:
+      'Configured and troubleshot an industrial machine-vision workflow for automated label verification, connecting OCR inspection, pass/fail logic, camera communication and OPC-mapped results with operator-facing industrial software.',
+  },
+
+  {
+    title: 'Interactive Dairy Plant Visualizer',
+    discipline: '3D Web / Industrial UX / Frontend',
+    description:
+      'Developed an interactive browser-based plant visualization using spatial points of interest and contextual process media to create an explorable industrial demonstration.',
+  },
+
+  {
+    title: 'Spray Dryer Digital Twin Visualization',
+    discipline: '3D / Digital Twin / Process Visualization',
+    description:
+      'Created animated 3D process scenarios representing spray density, droplet behaviour, airflow, powder behaviour and changing operating conditions inside an industrial spray dryer.',
+  },
+
+  {
+    title: 'Conversational 3D Avatar',
+    discipline: 'HCI / Three.js / Creative Technology',
+    description:
+      'Built an interactive browser-based 3D avatar combining real-time rendering, animation states, text and voice interaction, persona selection and responsive interface behaviour.',
+  },
+
+  {
+    title: 'Interactive Globe Portfolio',
+    discipline: 'React / Three.js / Spatial Interaction',
+    description:
+      'Designed and developed an interactive 3D globe as a spatial portfolio-navigation system using React and Three.js.',
+  },
+
+  {
+    title: 'Interactive 3D Product Viewer',
+    discipline: 'Product Visualization / Three.js / Frontend',
+    description:
+      'Developed a browser-based 3D product experience integrating a GLTF model, environment-based presentation, lighting, camera behaviour and orbit interaction.',
+  },
+
+  {
+    title: 'Carnot Engine & Thermodynamic Simulation',
+    discipline: 'MATLAB / Thermodynamics / Engineering Simulation',
+    description:
+      'Modelled idealized thermodynamic systems in MATLAB, translating physical relationships and mathematical equations into programmable simulations of Carnot and quasistatic processes.',
+  },
+
+  {
+    title: 'Technical Explainer & Product Videos',
+    discipline: 'Motion / Video / Technical Communication',
+    description:
+      'Produced technical narratives combining scripts, storyboards, motion graphics, software demonstrations, screen recordings, generated media and engineering information.',
+  },
+
+  {
+    title: 'Client Poster & Graphic Design',
+    discipline: 'Graphic Design / Adobe Illustrator',
+    description:
+      'Created client-facing posters, promotional graphics, vector assets and visual compositions while developing commercial design experience across different visual identities.',
+  },
+
+  {
+    title: 'Commercial Voice Performance',
+    discipline: 'Voice-Over / Audio Communication',
+    description:
+      'Recorded commercial advertising spots while developing experience in studio performance, script interpretation, pacing, tonal adaptation and brand-oriented spoken communication.',
+  },
+];
+---
+
+<BaseLayout
+  title="Resume | Ipsita Bose"
+  description="Resume of Ipsita Bose — Perception Engineer and Multimedia Designer working across engineering, interactive technology, visual design and technical storytelling."
+>
+  <Header active="resume" />
+
+  <main class="resume-page">
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="resume-hero shell">
+
+      <div class="resume-hero__copy">
+
+        <p class="eyebrow">Resume</p>
+
+        <h1 class="display">
+          Engineering.<br />
+          Design.<br />
+          <span>Perception.</span>
+        </h1>
+
+        <p class="resume-hero__intro">
+          Perception Engineer and Multimedia Designer with an Electronics
+          Engineering background, working across machine vision, industrial
+          automation, engineering simulation, interactive 3D, UX/UI, visual
+          communication, motion, technical storytelling, content strategy,
+          and voice performance.
+        </p>
+
+        <a
+          class="button"
+          href="/documents/Ipsita-Bose-Resume.pdf"
+          download
+        >
+          Download Full Resume
+          <span>↓</span>
+        </a>
+
+        <p class="resume-hero__download-note">
+          Complete experience, capability and project record.
+        </p>
+
+      </div>
+
+
+      <nav
+        class="resume-hero__index"
+        aria-label="Resume sections"
+      >
+        <a href="#experience">
+          <span>01</span>
+          <strong>Experience</strong>
+          <i>↓</i>
+        </a>
+
+        <a href="#capabilities">
+          <span>02</span>
+          <strong>Core Capabilities</strong>
+          <i>↓</i>
+        </a>
+
+        <a href="#projects">
+          <span>03</span>
+          <strong>Selected Projects</strong>
+          <i>↓</i>
+        </a>
+
+        <a href="#education">
+          <span>04</span>
+          <strong>Engineering Background</strong>
+          <i>↓</i>
+        </a>
+      </nav>
+
+    </section>
+
+
+
+    <!-- =========================
+         EXPERIENCE
+    ========================== -->
+
+    <section
+      class="resume-section shell"
+      id="experience"
+    >
+
+      <div class="section-heading">
+        <p class="eyebrow">01 / Experience</p>
+        <div class="section-rule"></div>
+      </div>
+
+
+      <div class="experience-list">
+
+        {
+          experience.map((item) => (
+
+            <article class="resume-entry">
+
+              <div class="resume-entry__meta">
+                <p>{item.company}</p>
+                <span>{item.date}</span>
+              </div>
+
+
+              <div class="resume-entry__content">
+
+                <h2>{item.role}</h2>
+
+                <p class="resume-entry__company">
+                  {item.company}
+                </p>
+
+                <p class="resume-entry__description">
+                  {item.description}
+                </p>
+
+
+                {
+                  item.areas && (
+                    <div class="resume-tags">
+                      {
+                        item.areas.map((area) => (
+                          <span>{area}</span>
+                        ))
+                      }
+                    </div>
+                  )
+                }
+
+              </div>
+
+            </article>
+
+          ))
+        }
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CORE CAPABILITIES
+    ========================== -->
+
+    <section
+      class="resume-section shell"
+      id="capabilities"
+    >
+
+      <div class="section-heading">
+        <p class="eyebrow">02 / Core Capabilities</p>
+        <div class="section-rule"></div>
+      </div>
+
+
+      <div class="capability-list">
+
+        {
+          capabilities.map((capability) => (
+
+            <article class="capability-row">
+
+              <span class="capability-row__number">
+                {capability.number}
+              </span>
+
+
+              <h2>
+                {capability.title}
+              </h2>
+
+
+              <div class="capability-row__skills">
+
+                {
+                  capability.skills.map((skill) => (
+                    <span>{skill}</span>
+                  ))
+                }
+
+              </div>
+
+            </article>
+
+          ))
+        }
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SELECTED PROJECTS
+    ========================== -->
+
+    <section
+      class="resume-section shell"
+      id="projects"
+    >
+
+      <div class="section-heading">
+        <p class="eyebrow">03 / Selected Projects</p>
+        <div class="section-rule"></div>
+      </div>
+
+
+      <div class="resume-project-list">
+
+        {
+          projects.map((project, index) => (
+
+            <article class="resume-project">
+
+              <span class="resume-project__number">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+
+
+              <div class="resume-project__content">
+
+                <p class="resume-project__discipline">
+                  {project.discipline}
+                </p>
+
+                <h2>
+                  {project.title}
+                </h2>
+
+                <p class="resume-project__description">
+                  {project.description}
+                </p>
+
+              </div>
+
+            </article>
+
+          ))
+        }
+
+      </div>
+
+
+      <p class="resume-project-note">
+        The complete project inventory is available in the downloadable resume.
+      </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         ENGINEERING BACKGROUND
+    ========================== -->
+
+    <section
+      class="resume-section shell"
+      id="education"
+    >
+
+      <div class="section-heading">
+        <p class="eyebrow">04 / Engineering Background</p>
+        <div class="section-rule"></div>
+      </div>
+
+
+      <div class="resume-education">
+
+        <span class="resume-education__year">
+          2024
+        </span>
+
+        <div>
+          <h2>
+            Bachelor of Engineering
+          </h2>
+
+          <p>
+            Electronics Engineering
+          </p>
+
+          <span>
+            Graduated 2024
+          </span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         DOWNLOAD CTA
+    ========================== -->
+
+    <section class="resume-download shell">
+
+      <p class="eyebrow">
+        Complete Resume
+      </p>
+
+      <h2 class="display">
+        Seven pages.<br />
+        <span>No shortcuts.</span>
+      </h2>
+
+      <p class="resume-download__copy">
+        The web version is designed for exploration. The downloadable resume
+        contains the complete capability map, experience history and project
+        inventory.
+      </p>
+
+      <a
+        class="button"
+        href="/documents/Ipsita-Bose-Resume.pdf"
+        download
+      >
+        Download Full Resume
+        <span>↓</span>
+      </a>
+
+    </section>
+
+  </main>
+
+</BaseLayout>
