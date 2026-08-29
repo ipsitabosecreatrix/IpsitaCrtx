@@ -15,18 +15,8 @@
       data-master-video
       muted
       playsinline
-      preload="metadata"
-    >
-      <source
-        src="/videos/dairy.webm"
-        type="video/webm"
-      />
-
-      <source
-        src="/videos/dairy-master.mp4"
-        type="video/mp4"
-      />
-    </video>
+      preload="auto"
+    ></video>
 
 
     <!-- POIs -->
@@ -221,9 +211,8 @@
     <div
       class="dairy-viewer__loading"
       data-loading
-      hidden
     >
-      Loading view…
+      Loading interactive plant…
     </div>
 
   </div>
@@ -636,23 +625,126 @@
         }
       );
 
-      const beginPreload = () => {
-        video.preload = 'auto';
-        video.load();
-      };
+      async function loadMasterVideo() {
+
+        pois.classList.add('is-loading');
+
+        loading.hidden = false;
+        loading.textContent =
+          'Loading interactive plant…';
+
+        try {
+
+          /*
+          * Download the complete WebM.
+          *
+          * Once converted to a Blob URL,
+          * all subsequent seeking happens
+          * against a local browser resource.
+          */
+          const response = await fetch(
+            '/videos/dairy.webm'
+          );
+
+          if (!response.ok) {
+            throw new Error(
+              `Video download failed: ${response.status}`
+            );
+          }
+
+          const blob =
+            await response.blob();
+
+          const blobURL =
+            URL.createObjectURL(blob);
+
+          video.src = blobURL;
+
+          video.load();
 
 
-      if ('requestIdleCallback' in window) {
-        window.requestIdleCallback(
-          beginPreload,
-          { timeout: 1800 }
-        );
-      } else {
-        window.setTimeout(
-          beginPreload,
-          800
-        );
+          await new Promise(
+            (resolve, reject) => {
+
+              const ready = () => {
+                cleanup();
+                resolve();
+              };
+
+              const failed = () => {
+                cleanup();
+
+                reject(
+                  new Error(
+                    'Unable to load dairy master video.'
+                  )
+                );
+              };
+
+              const cleanup = () => {
+                video.removeEventListener(
+                  'loadedmetadata',
+                  ready
+                );
+
+                video.removeEventListener(
+                  'error',
+                  failed
+                );
+              };
+
+
+              video.addEventListener(
+                'loadedmetadata',
+                ready
+              );
+
+              video.addEventListener(
+                'error',
+                failed
+              );
+
+            }
+          );
+
+
+          /*
+          * Keep video invisible initially.
+          * The overview WebP remains visible.
+          */
+          video.currentTime = 0;
+
+          pois.classList.remove(
+            'is-loading'
+          );
+
+          loading.hidden = true;
+
+
+          console.log(
+            'Dairy master ready:',
+            video.duration,
+            'seconds'
+          );
+
+        } catch (error) {
+
+          console.error(
+            'Unable to prepare dairy viewer:',
+            error
+          );
+
+          loading.hidden = false;
+
+          loading.textContent =
+            'Interactive view unavailable.';
+
+        }
+
       }
+
+
+      loadMasterVideo();
 
     });
 </script>

@@ -904,6 +904,10 @@
     font-size: 1.4rem;
   }
 
+  .dairy-viewer__pois.is-loading {
+    pointer-events: none;
+    opacity: 0.45;
+  }
 }
 
 @media (max-width: 560px) {
