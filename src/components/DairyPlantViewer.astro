@@ -470,22 +470,30 @@
 
       async function playSegment(
         startFrame,
-        endFrame
+        endFrame,
+        shouldSeek = true
       ) {
         if (playing) return;
 
         playing = true;
         setLoading(true);
 
-        const start =
-          frameToSeconds(startFrame);
+        const start = frameToSeconds(startFrame);
+        const end = frameToSeconds(endFrame);
 
-        const end =
-          frameToSeconds(endFrame);
+        /*
+        * Only seek when opening a new POI.
+        *
+        * When returning to the overview, the video is
+        * already paused at the correct position, so
+        * seeking again would cause visible decoding jumps
+        * when the file is streamed over the network.
+        */
+        if (shouldSeek) {
+          video.currentTime = start;
 
-        video.currentTime = start;
-
-        await waitForSeek(video);
+          await waitForSeek(video);
+        }
 
         video.classList.add('is-visible');
 
@@ -503,15 +511,20 @@
           return;
         }
 
-
         return new Promise((resolve) => {
 
           const monitor = () => {
 
             if (video.currentTime >= end) {
-              video.pause();
 
-              video.currentTime = end;
+              /*
+              * IMPORTANT:
+              * Just pause.
+              *
+              * Do NOT set video.currentTime = end here.
+              * Doing so creates another network seek.
+              */
+              video.pause();
 
               playing = false;
 
@@ -526,7 +539,6 @@
 
         });
       }
-
 
       viewer
         .querySelectorAll('[data-zone]')
@@ -580,9 +592,14 @@
 
           hideZoneUI();
 
+          /*
+          * Continue directly from the paused
+          * zoomed-in frame. No seek.
+          */
           await playSegment(
             zone.outStart,
-            zone.outEnd
+            zone.outEnd,
+            false
           );
 
           activeZone = null;
@@ -590,7 +607,6 @@
           setPOIsVisible(true);
         }
       );
-
 
       const beginPreload = () => {
         video.preload = 'auto';
