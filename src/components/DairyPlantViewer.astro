@@ -450,23 +450,42 @@
       }
 
 
-      function waitForSeek(videoElement) {
+      function seekTo(videoElement, targetTime) {
         return new Promise((resolve) => {
 
-          if (!videoElement.seeking) {
+          /*
+          * If we're genuinely already at the requested
+          * position, no seek is necessary.
+          */
+          if (
+            Math.abs(videoElement.currentTime - targetTime) < 0.04 &&
+            videoElement.readyState >= 2
+          ) {
             resolve();
             return;
           }
 
+          const handleSeeked = () => {
+            videoElement.removeEventListener(
+              'seeked',
+              handleSeeked
+            );
+
+            resolve();
+          };
+
+          /*
+          * IMPORTANT:
+          * Attach the listener BEFORE changing currentTime.
+          */
           videoElement.addEventListener(
             'seeked',
-            resolve,
-            { once: true }
+            handleSeeked
           );
 
+          videoElement.currentTime = targetTime;
         });
       }
-
 
       async function playSegment(
         startFrame,
@@ -478,38 +497,51 @@
         playing = true;
         setLoading(true);
 
-        const start = frameToSeconds(startFrame);
-        const end = frameToSeconds(endFrame);
+        const start =
+          frameToSeconds(startFrame);
+
+        const end =
+          frameToSeconds(endFrame);
+
 
         /*
-        * Only seek when opening a new POI.
-        *
-        * When returning to the overview, the video is
-        * already paused at the correct position, so
-        * seeking again would cause visible decoding jumps
-        * when the file is streamed over the network.
+        * Opening a POI requires a real seek.
+        * Returning to overview continues from
+        * the current paused position.
         */
         if (shouldSeek) {
-          video.currentTime = start;
 
-          await waitForSeek(video);
+          video.pause();
+
+          await seekTo(
+            video,
+            start
+          );
+
         }
+
 
         video.classList.add('is-visible');
 
         setLoading(false);
 
+
         try {
+
           await video.play();
+
         } catch (error) {
+
           console.error(
             'Unable to play dairy master video:',
             error
           );
 
           playing = false;
+
           return;
         }
+
 
         return new Promise((resolve) => {
 
@@ -517,23 +549,18 @@
 
             if (video.currentTime >= end) {
 
-              /*
-              * IMPORTANT:
-              * Just pause.
-              *
-              * Do NOT set video.currentTime = end here.
-              * Doing so creates another network seek.
-              */
               video.pause();
 
               playing = false;
 
               resolve();
+
               return;
             }
 
             requestAnimationFrame(monitor);
           };
+
 
           requestAnimationFrame(monitor);
 
@@ -567,7 +594,8 @@
 
               await playSegment(
                 zone.inStart,
-                zone.inEnd
+                zone.inEnd,
+                true
               );
 
               showZoneUI(zone);
