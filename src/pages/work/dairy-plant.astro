@@ -1,0 +1,254 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import DairyPlantViewer from '../../components/DairyPlantViewer.astro';
+
+import '../../styles/dairy.css';
+---
+
+<BaseLayout
+  title="Interactive Dairy Plant Visualizer | Ipsita Bose"
+  description="An interactive browser-based dairy plant visualization combining 3D rendering, spatial navigation, frontend development and industrial process communication."
+>
+  <Header active="work" />
+
+  <main>
+
+    <!-- HERO -->
+    <section class="dairy-case-hero shell">
+
+      <div class="dairy-case-hero__copy">
+
+        <p class="eyebrow">
+          Interactive Industrial Experience
+        </p>
+
+        <h1 class="display">
+          Dairy Plant<br />
+          <span>Visualizer.</span>
+        </h1>
+
+        <p class="dairy-case-hero__intro">
+          An interactive browser-based plant visualization designed
+          to make a large industrial environment explorable without
+          delivering the original multi-gigabyte 3D model to the browser.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- VIEWER -->
+    <section class="dairy-explorer shell">
+
+      <div class="section-heading">
+        <p class="eyebrow">Explore the plant</p>
+        <div class="section-rule"></div>
+      </div>
+
+      <DairyPlantViewer />
+
+    </section>
+
+
+    <!-- PROJECT OVERVIEW -->
+    <section class="dairy-section shell">
+
+      <div class="dairy-section__label">
+        <p class="eyebrow">Project overview</p>
+      </div>
+
+      <div class="dairy-section__content">
+
+        <h2 class="display">
+          A large plant.<br />
+          <span>Made explorable.</span>
+        </h2>
+
+        <p>
+          The Dairy Plant Visualizer is a browser-based interactive
+          experience built to communicate the structure of a large
+          industrial dairy facility. Instead of presenting the plant
+          as a static render, the interface allows users to move through
+          eighteen points of interest and examine specific areas within
+          the facility.
+        </p>
+
+        <p>
+          The experience combines 3D visualization, spatial interface
+          design, frontend interaction logic and pre-rendered media to
+          create the impression of navigating directly through the plant.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- CHALLENGE -->
+    <section class="dairy-section shell">
+
+      <div class="dairy-section__label">
+        <p class="eyebrow">The challenge</p>
+      </div>
+
+      <div class="dairy-section__content">
+
+        <h2 class="display">
+          High Detail<br />
+          <span>High Overhead.</span>
+        </h2>
+
+        <p>
+          The original dairy plant environment was built as a detailed
+          3D model whose source assets exceeded practical browser-delivery
+          limits. Loading the complete model as a real-time web experience
+          would have introduced excessive download size, rendering overhead
+          and inconsistent performance.
+        </p>
+
+        <p>
+          The challenge was therefore not simply to display the model,
+          but to preserve the feeling of moving through a spatial
+          environment without requiring the browser to render the
+          entire scene in real time.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- APPROACH -->
+    <section class="dairy-section dairy-approach shell">
+
+      <div class="dairy-section__label">
+        <p class="eyebrow">The approach</p>
+      </div>
+
+      <div class="dairy-section__content">
+
+        <h2 class="display">
+          Rendered Once.<br />
+          <span>Explored Freely.</span>
+        </h2>
+
+        <p>
+          I replaced direct model delivery with a pre-rendered navigation
+          system. Eighteen points of interest are positioned over a
+          high-resolution overview of the plant and mapped to precise
+          sections of a single master animation.
+        </p>
+
+        <p>
+          Selecting a location seeks directly to the corresponding
+          segment, plays the camera movement into that area, and pauses
+          on the destination view. Returning to the plant continues
+          through the matching zoom-out sequence and restores the
+          overview and its points of interest.
+        </p>
+
+
+        <div class="dairy-process">
+
+          <article>
+            <span>01</span>
+            <h3>Overview</h3>
+            <p>
+              A high-resolution plant render acts as the initial visual
+              state and supports 18 spatial POIs.
+            </p>
+          </article>
+
+          <article>
+            <span>02</span>
+            <h3>Select</h3>
+            <p>
+              Each POI is mapped independently to the correct location
+              within the master video timeline.
+            </p>
+          </article>
+
+          <article>
+            <span>03</span>
+            <h3>Navigate</h3>
+            <p>
+              The browser seeks to the required frame range and plays
+              only the transition associated with that location.
+            </p>
+          </article>
+
+          <article>
+            <span>04</span>
+            <h3>Hold</h3>
+            <p>
+              Playback pauses directly on the destination frame,
+              no need to swap between video and static imagery.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ROLE / TOOLS -->
+    <section class="dairy-section dairy-details shell">
+
+      <div class="dairy-section__label">
+        <p class="eyebrow">Project details</p>
+      </div>
+
+      <div class="dairy-section__content">
+
+        <div class="dairy-details__grid">
+
+          <div>
+            <span>Role</span>
+            <p>
+              Interaction Design<br />
+              3D Visualization<br />
+              Frontend Implementation
+            </p>
+          </div>
+
+          <div>
+            <span>Tools</span>
+            <p>
+              Blender<br />
+              JavaScript<br />
+              HTML / CSS
+            </p>
+          </div>
+
+          <div>
+            <span>Focus</span>
+            <p>
+              Industrial UX<br />
+              Spatial Navigation<br />
+              Multimedia Optimization<br />
+              Technical Visualization
+            </p>
+          </div>
+
+          <div>
+            <span>Interaction</span>
+            <p>
+              18 POIs<br />
+              Frame-Based Playback<br />
+              Responsive Positioning<br />
+              Pre-Rendered Navigation
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+  </main>
+
+</BaseLayout>

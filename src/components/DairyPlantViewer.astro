@@ -1,0 +1,614 @@
+<div class="dairy-viewer" data-dairy-viewer>
+
+  <div class="dairy-viewer__stage">
+
+    <!-- Permanent fallback/initial image -->
+    <img
+      class="dairy-viewer__overview"
+      src="/images/dairy/dairy-overview.webp"
+      alt="Overview of the interactive dairy processing plant"
+    />
+
+    <!-- Persistent master video -->
+    <video
+      class="dairy-viewer__video"
+      data-master-video
+      muted
+      playsinline
+      preload="metadata"
+    >
+      <source
+        src="/videos/dairy.webm"
+        type="video/webm"
+      />
+
+      <source
+        src="/videos/dairy-master.mp4"
+        type="video/mp4"
+      />
+    </video>
+
+
+    <!-- POIs -->
+    <div class="dairy-viewer__pois" data-pois>
+
+    <button
+      class="dairy-poi"
+      data-zone="cow-farm"
+      style="--x: 35.10%; --y: 7.78%;"
+      aria-label="Explore Cow Farm"
+    >
+      <span>01</span>
+    </button>
+
+    <button
+      class="dairy-poi"
+      data-zone="control-room"
+      style="--x: 36.15%; --y: 46.11%;"
+      aria-label="Explore Control Room"
+    >
+      <span>02</span>
+    </button>
+
+    <button
+      class="dairy-poi"
+      data-zone="milk-reception"
+      style="--x: 14.17%; --y: 41.30%;"
+      aria-label="Explore Milk Reception"
+    >
+      <span>03</span>
+    </button>
+
+    <button
+      class="dairy-poi"
+      data-zone="rmst"
+      style="--x: 31.67%; --y: 25.19%;"
+      aria-label="Explore RMST"
+    >
+      <span>04</span>
+    </button>
+
+    <button
+      class="dairy-poi"
+      data-zone="pasteuriser"
+      style="--x: 42.60%; --y: 40.00%;"
+      aria-label="Explore Pasteuriser"
+    >
+      <span>05</span>
+    </button>
+
+    <button
+      class="dairy-poi"
+      data-zone="pmst"
+      style="--x: 45.10%; --y: 17.96%;"
+      aria-label="Explore PMST"
+    >
+      <span>06</span>
+    </button>
+
+    <button
+      class="dairy-poi"
+      data-zone="butter-tank"
+      style="--x: 63.33%; --y: 48.61%;"
+      aria-label="Explore Butter Tank"
+    >
+      <span>07</span>
+    </button>
+
+    <button
+      class="dairy-poi"
+      data-zone="yogurt-tank"
+      style="--x: 76.20%; --y: 76.39%;"
+      aria-label="Explore Yogurt Tank"
+    >
+      <span>08</span>
+    </button>
+
+    <button
+      class="dairy-poi"
+      data-zone="cip"
+      style="--x: 59.79%; --y: 38.61%;"
+      aria-label="Explore CIP"
+    >
+      <span>09</span>
+    </button>
+
+    <button
+      class="dairy-poi"
+      data-zone="packaging"
+      style="--x: 60.26%; --y: 70.19%;"
+      aria-label="Explore Packaging"
+    >
+      <span>10</span>
+    </button>
+
+    <button
+      class="dairy-poi"
+      data-zone="warehouse"
+      style="--x: 83.80%; --y: 56.57%;"
+      aria-label="Explore Warehouse"
+    >
+      <span>11</span>
+    </button>
+
+    <button
+      class="dairy-poi"
+      data-zone="lab"
+      style="--x: 46.15%; --y: 64.35%;"
+      aria-label="Explore Lab"
+    >
+      <span>12</span>
+    </button>
+
+    <button
+      class="dairy-poi"
+      data-zone="shipping"
+      style="--x: 88.49%; --y: 36.57%;"
+      aria-label="Explore Shipping"
+    >
+      <span>13</span>
+    </button>
+
+    <button
+      class="dairy-poi"
+      data-zone="office"
+      style="--x: 27.71%; --y: 45.00%;"
+      aria-label="Explore Office"
+    >
+      <span>14</span>
+    </button>
+
+    <button
+      class="dairy-poi"
+      data-zone="chiller"
+      style="--x: 26.98%; --y: 18.61%;"
+      aria-label="Explore Chiller"
+    >
+      <span>15</span>
+    </button>
+
+    <button
+      class="dairy-poi"
+      data-zone="www"
+      style="--x: 77.40%; --y: 26.85%;"
+      aria-label="Explore WWW"
+    >
+      <span>16</span>
+    </button>
+
+    <button
+      class="dairy-poi"
+      data-zone="grid"
+      style="--x: 14.32%; --y: 25.19%;"
+      aria-label="Explore Grid"
+    >
+      <span>17</span>
+    </button>
+
+    <button
+      class="dairy-poi"
+      data-zone="ev-charging"
+      style="--x: 25.36%; --y: 62.50%;"
+      aria-label="Explore EV Charging"
+    >
+      <span>18</span>
+    </button>
+    </div>
+
+
+    <!-- Zone UI -->
+    <div
+      class="dairy-viewer__zone-ui"
+      data-zone-ui
+      hidden
+    >
+      <button
+        class="dairy-viewer__back"
+        data-back
+        type="button"
+      >
+        ← Back to plant
+      </button>
+
+      <div class="dairy-viewer__zone-label">
+        <span data-zone-number></span>
+        <strong data-zone-title></strong>
+      </div>
+    </div>
+
+
+    <!-- Loading indicator -->
+    <div
+      class="dairy-viewer__loading"
+      data-loading
+      hidden
+    >
+      Loading view…
+    </div>
+
+  </div>
+
+
+  <div class="dairy-viewer__instructions">
+    <p>
+      Select a point of interest to explore the plant.
+    </p>
+  </div>
+
+</div>
+
+
+<script>
+  const FPS = 25;
+
+  const FIRST_FRAME = 12;
+  const CYCLE_FRAMES = 125;
+
+  // Zoom-in + destination hold
+  const OPEN_FRAMES = 63;
+
+  /*
+   * "number" = number displayed on the plant
+   * "timelineIndex" = position in the rendered master video
+   */
+  const zoneData = [
+    {
+      id: 'cow-farm',
+      label: 'Cow Farm',
+      number: '01',
+      timelineIndex: 0,
+    },
+    {
+      id: 'control-room',
+      label: 'Control Room',
+      number: '02',
+      timelineIndex: 13,
+    },
+    {
+      id: 'milk-reception',
+      label: 'Milk Reception',
+      number: '03',
+      timelineIndex: 11,
+    },
+    {
+      id: 'rmst',
+      label: 'RMST',
+      number: '04',
+      timelineIndex: 10,
+    },
+    {
+      id: 'pasteuriser',
+      label: 'Pasteuriser',
+      number: '05',
+      timelineIndex: 6,
+    },
+    {
+      id: 'pmst',
+      label: 'PMST',
+      number: '06',
+      timelineIndex: 7,
+    },
+    {
+      id: 'butter-tank',
+      label: 'Butter Tank',
+      number: '07',
+      timelineIndex: 4,
+    },
+    {
+      id: 'yogurt-tank',
+      label: 'Yogurt Tank',
+      number: '08',
+      timelineIndex: 16,
+    },
+    {
+      id: 'cip',
+      label: 'CIP',
+      number: '09',
+      timelineIndex: 5,
+    },
+    {
+      id: 'packaging',
+      label: 'Packaging',
+      number: '10',
+      timelineIndex: 15,
+    },
+    {
+      id: 'warehouse',
+      label: 'Warehouse',
+      number: '11',
+      timelineIndex: 3,
+    },
+    {
+      id: 'lab',
+      label: 'Lab',
+      number: '12',
+      timelineIndex: 14,
+    },
+    {
+      id: 'shipping',
+      label: 'Shipping',
+      number: '13',
+      timelineIndex: 2,
+    },
+    {
+      id: 'office',
+      label: 'Office',
+      number: '14',
+      timelineIndex: 12,
+    },
+    {
+      id: 'chiller',
+      label: 'Chiller',
+      number: '15',
+      timelineIndex: 8,
+    },
+    {
+      id: 'www',
+      label: 'WWW',
+      number: '16',
+      timelineIndex: 1,
+    },
+    {
+      id: 'grid',
+      label: 'Grid',
+      number: '17',
+      timelineIndex: 9,
+    },
+    {
+      id: 'ev-charging',
+      label: 'EV Charging',
+      number: '18',
+      timelineIndex: 17,
+    },
+  ].map((zone) => {
+    const inStart =
+      FIRST_FRAME + (zone.timelineIndex * CYCLE_FRAMES);
+
+    const inEnd =
+      inStart + OPEN_FRAMES;
+
+    return {
+      ...zone,
+      inStart,
+      inEnd,
+      outStart: inEnd,
+      outEnd: inStart + CYCLE_FRAMES,
+    };
+  });
+
+
+  const frameToSeconds = (frame) =>
+    frame / FPS;
+
+
+  document
+    .querySelectorAll('[data-dairy-viewer]')
+    .forEach((viewer) => {
+
+      const video =
+        viewer.querySelector('[data-master-video]');
+
+      const pois =
+        viewer.querySelector('[data-pois]');
+
+      const zoneUI =
+        viewer.querySelector('[data-zone-ui]');
+
+      const backButton =
+        viewer.querySelector('[data-back]');
+
+      const title =
+        viewer.querySelector('[data-zone-title]');
+
+      const number =
+        viewer.querySelector('[data-zone-number]');
+
+      const loading =
+        viewer.querySelector('[data-loading]');
+
+
+      if (
+        !video ||
+        !pois ||
+        !zoneUI ||
+        !backButton ||
+        !title ||
+        !number ||
+        !loading
+      ) {
+        return;
+      }
+
+
+      let activeZone = null;
+      let playing = false;
+
+
+      function setLoading(value) {
+        loading.hidden = !value;
+      }
+
+
+      function setPOIsVisible(value) {
+        pois.classList.toggle(
+          'is-hidden',
+          !value
+        );
+      }
+
+
+      function showZoneUI(zone) {
+        title.textContent = zone.label;
+        number.textContent = zone.number;
+
+        zoneUI.hidden = false;
+      }
+
+
+      function hideZoneUI() {
+        zoneUI.hidden = true;
+      }
+
+
+      function waitForSeek(videoElement) {
+        return new Promise((resolve) => {
+
+          if (!videoElement.seeking) {
+            resolve();
+            return;
+          }
+
+          videoElement.addEventListener(
+            'seeked',
+            resolve,
+            { once: true }
+          );
+
+        });
+      }
+
+
+      async function playSegment(
+        startFrame,
+        endFrame
+      ) {
+        if (playing) return;
+
+        playing = true;
+        setLoading(true);
+
+        const start =
+          frameToSeconds(startFrame);
+
+        const end =
+          frameToSeconds(endFrame);
+
+        video.currentTime = start;
+
+        await waitForSeek(video);
+
+        video.classList.add('is-visible');
+
+        setLoading(false);
+
+        try {
+          await video.play();
+        } catch (error) {
+          console.error(
+            'Unable to play dairy master video:',
+            error
+          );
+
+          playing = false;
+          return;
+        }
+
+
+        return new Promise((resolve) => {
+
+          const monitor = () => {
+
+            if (video.currentTime >= end) {
+              video.pause();
+
+              video.currentTime = end;
+
+              playing = false;
+
+              resolve();
+              return;
+            }
+
+            requestAnimationFrame(monitor);
+          };
+
+          requestAnimationFrame(monitor);
+
+        });
+      }
+
+
+      viewer
+        .querySelectorAll('[data-zone]')
+        .forEach((button) => {
+
+          button.addEventListener(
+            'click',
+            async () => {
+
+              if (playing) return;
+
+              const zoneId =
+                button.dataset.zone;
+
+              const zone =
+                zoneData.find(
+                  (item) => item.id === zoneId
+                );
+
+              if (!zone) return;
+
+              activeZone = zone;
+
+              setPOIsVisible(false);
+              hideZoneUI();
+
+              await playSegment(
+                zone.inStart,
+                zone.inEnd
+              );
+
+              showZoneUI(zone);
+            }
+          );
+
+        });
+
+
+      backButton.addEventListener(
+        'click',
+        async () => {
+
+          if (
+            !activeZone ||
+            playing
+          ) {
+            return;
+          }
+
+          const zone = activeZone;
+
+          hideZoneUI();
+
+          await playSegment(
+            zone.outStart,
+            zone.outEnd
+          );
+
+          activeZone = null;
+
+          setPOIsVisible(true);
+        }
+      );
+
+
+      const beginPreload = () => {
+        video.preload = 'auto';
+        video.load();
+      };
+
+
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(
+          beginPreload,
+          { timeout: 1800 }
+        );
+      } else {
+        window.setTimeout(
+          beginPreload,
+          800
+        );
+      }
+
+    });
+</script>
