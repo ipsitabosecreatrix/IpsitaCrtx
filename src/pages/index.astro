@@ -1,23 +1,53 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
-import MedusaCard from '../components/MedusaCard.astro';
-import DairyCard from '../components/DairyCard.astro';
 import '../styles/work.css';
 ---
-<BaseLayout title="Ipsita Bose | CRTX"  description="Perception Engineer & Multimedia Designer.">
+
+<BaseLayout
+  title="Ipsita Bose | CRTX"
+  description="Content strategist, perception engineer and multimedia designer working across technical storytelling, visual communication, interactive experiences and emerging technology."
+>
   <Header active="work" />
 
   <main>
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
     <section class="hero shell">
+
       <div class="hero__copy">
-        <p class="eyebrow">Hello, I'm Ipsita</p>
-        <h1 class="display">I turn complexity into <span>clarity.</span> </h1>
-        <p class="hero__discipline">Perception Engineer <i>/</i> Multimedia Designer</p>
-        <a class="button" href="#work">My Approach<span>→</span></a>
+
+        <p class="eyebrow">
+          Hello, I'm Ipsita
+        </p>
+
+        <h1 class="display">
+          I turn complexity into
+          <span>clarity.</span>
+        </h1>
+
+        <p class="hero__discipline">
+          Content Strategist
+          <i>/</i>
+          Multimedia Designer
+        </p>
+
+        <a class="button" href="#work">
+          Explore my work
+          <span>→</span>
+        </a>
+
       </div>
 
-      <div class="hero__visual" aria-label="Animated 3D avatar of Ipsita Bose">
+
+      <div
+        class="hero__visual"
+        aria-label="Animated 3D avatar of Ipsita Bose"
+      >
+
         <video
           class="hero__avatar hero__avatar--desktop"
           autoplay
@@ -27,8 +57,12 @@ import '../styles/work.css';
           preload="auto"
           aria-hidden="true"
         >
-          <source src="/videos/avatar-desktop.webm" type="video/webm" />
+          <source
+            src="/videos/avatar-desktop.webm"
+            type="video/webm"
+          />
         </video>
+
 
         <video
           class="hero__avatar hero__avatar--mobile"
@@ -39,64 +73,423 @@ import '../styles/work.css';
           preload="auto"
           aria-hidden="true"
         >
-          <source src="/videos/avatar-mobile.webm" type="video/webm" />
+          <source
+            src="/videos/avatar-mobile.webm"
+            type="video/webm"
+          />
         </video>
+
       </div>
+
     </section>
+
+
+    <!-- =====================================================
+         SELECTED WORK
+    ====================================================== -->
 
     <section class="selected shell" id="work">
+
       <div class="section-heading">
-        <p class="eyebrow">Selected work</p>
-        <div class="section-rule"><span>⌁</span></div>
+
+        <p class="eyebrow">
+          Selected work
+        </p>
+
+        <div class="section-rule">
+          <span>⌁</span>
+        </div>
+
       </div>
 
-      <div class="featured-grid">
-        <MedusaCard />
-        <DairyCard />
 
-        <article class="project-card placeholder-card">
-          <div class="placeholder-art globe"></div>
+      <div class="work-grid">
 
-          <div class="project-card__meta">
-            <span class="project-index">03</span>
+        <!-- 01 CONTENT STRATEGY -->
+
+        <a
+          class="work-card work-card--strategy"
+          href="/work/content-strategy"
+        >
+
+          <div class="work-card__visual">
+
+            <div class="strategy-visual">
+
+              <span class="strategy-visual__line strategy-visual__line--one">
+                AUDIENCE
+              </span>
+
+              <span class="strategy-visual__line strategy-visual__line--two">
+                MESSAGE
+              </span>
+
+              <span class="strategy-visual__line strategy-visual__line--three">
+                CHANNEL
+              </span>
+
+              <span class="strategy-visual__line strategy-visual__line--four">
+                NARRATIVE
+              </span>
+
+              <span class="strategy-visual__line strategy-visual__line--five">
+                ATTENTION
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="work-card__meta">
+
+            <span class="work-card__number">
+              01
+            </span>
 
             <div>
-              <h3 class="display">3D Globe</h3>
-              <p>Creative Development / Web</p>
+
+              <p class="work-card__type">
+                Strategy / Communication
+              </p>
+
+              <h2 class="display">
+                Content Strategy
+              </h2>
+
+              <p class="work-card__description">
+                Campaigns, editorial systems and audience communication.
+              </p>
+
             </div>
+
+            <span
+              class="work-card__arrow"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
+
           </div>
-        </article>
 
-        <article class="project-card placeholder-card">
-          <div class="placeholder-art spray"></div>
+        </a>
 
-          <div class="project-card__meta">
-            <span class="project-index">04</span>
+
+        <!-- 02 TECHNICAL STORYTELLING -->
+
+        <a
+          class="work-card work-card--storytelling"
+          href="/work/technical-storytelling"
+        >
+
+          <div class="work-card__visual">
+
+            <div class="story-visual">
+
+              <div class="story-visual__source">
+                <span>COMPLEX</span>
+                <span>PRODUCT</span>
+                <span>SYSTEM</span>
+              </div>
+
+              <div
+                class="story-visual__path"
+                aria-hidden="true"
+              >
+                →
+              </div>
+
+              <div class="story-visual__result">
+                CLEAR<br />
+                STORY
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="work-card__meta">
+
+            <span class="work-card__number">
+              02
+            </span>
 
             <div>
-              <h3 class="display">Spray Dryer</h3>
-              <p>3D / Industrial Visualization</p>
+
+              <p class="work-card__type">
+                Narrative / Product Communication
+              </p>
+
+              <h2 class="display">
+                Technical Storytelling
+              </h2>
+
+              <p class="work-card__description">
+                Product narratives, scripts, explainers and demo communication.
+              </p>
+
             </div>
+
+            <span
+              class="work-card__arrow"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
+
           </div>
-        </article>
+
+        </a>
+
+
+        <!-- 03 DAIRY -->
+
+        <a
+          class="work-card work-card--secondary work-card--dairy"
+          href="/work/dairy-plant"
+        >
+
+          <div class="work-card__visual">
+
+            <img
+              src="/images/dairy/dairy-overview.webp"
+              alt="Interactive dairy plant visualization"
+              loading="lazy"
+            />
+
+            <div class="work-card__sheen"></div>
+
+          </div>
+
+
+          <div class="work-card__meta">
+
+            <span class="work-card__number">
+              03
+            </span>
+
+            <div>
+
+              <p class="work-card__type">
+                Interactive Media / Frontend
+              </p>
+
+              <h2 class="display">
+                Dairy Plant Visualizer
+              </h2>
+
+              <p class="work-card__description">
+                An explorable industrial environment built around spatial storytelling.
+              </p>
+
+            </div>
+
+            <span
+              class="work-card__arrow"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
+
+          </div>
+
+        </a>
+
+        <!-- 04 MEDUSA -->
+
+        <a
+          class="work-card work-card--secondary work-card--medusa"
+          href="/work/medusa"
+        >
+
+          <div class="work-card__visual">
+
+            <img
+              src="/images/medusa.png"
+              alt="Interactive 3D Product Viewer"
+              loading="lazy"
+            />
+
+            <div class="work-card__sheen"></div>
+
+          </div>
+
+
+          <div class="work-card__meta">
+
+            <span class="work-card__number">
+              04
+            </span>
+
+            <div>
+
+              <p class="work-card__type">
+                3D Interactive Media / Product Visualization
+              </p>
+
+              <h2 class="display">
+                Medusa
+              </h2>
+
+              <p class="work-card__description">
+                A 3D Product Visualiser showcasing my tattoo machine prototype.
+              </p>
+
+            </div>
+
+            <span
+              class="work-card__arrow"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- 05 MOTION -->
+
+        <a
+          class="work-card work-card--secondary work-card--motion"
+          href="/work/motion-video"
+        >
+
+          <div class="work-card__visual">
+
+            <div class="motion-visual">
+
+              <div class="motion-visual__frame"></div>
+              <div class="motion-visual__frame"></div>
+              <div class="motion-visual__frame"></div>
+
+              <span>
+                ▶
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="work-card__meta">
+
+            <span class="work-card__number">
+              05
+            </span>
+
+            <div>
+
+              <p class="work-card__type">
+                Motion / Multimedia
+              </p>
+
+              <h2 class="display">
+                Motion & Video
+              </h2>
+
+              <p class="work-card__description">
+                Editing, motion design, product demos and promotional films.
+              </p>
+
+            </div>
+
+            <span
+              class="work-card__arrow"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- 06 INTERACTIVE & 3D -->
+
+        <a
+          class="work-card work-card--secondary work-card--interactive"
+          href="/work/interactive-3d"
+        >
+
+          <div class="work-card__visual">
+
+            <div class="interactive-visual">
+
+              <div class="interactive-visual__orb"></div>
+
+              <div class="interactive-visual__wire">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="work-card__meta">
+
+            <span class="work-card__number">
+              05
+            </span>
+
+            <div>
+
+              <p class="work-card__type">
+                Creative Technology / 3D
+              </p>
+
+              <h2 class="display">
+                Interactive & 3D
+              </h2>
+
+              <p class="work-card__description">
+                3D modelling, web experiments and interactive visual systems.
+              </p>
+
+            </div>
+
+            <span
+              class="work-card__arrow"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
+
+          </div>
+
+        </a>
+
       </div>
+
     </section>
 
-    <section class="collections shell">
-      <a href="#" class="collection-card"><span>05</span><strong>Motion & Video</strong><em>→</em></a>
-      <a href="#" class="collection-card"><span>06</span><strong>Campaigns & Social</strong><em>→</em></a>
-      <a href="#" class="collection-card"><span>07</span><strong>Editorial & Newsletters</strong><em>→</em></a>
-    </section>
+
+    <!-- =====================================================
+         CTA
+    ====================================================== -->
 
     <section class="cta shell">
+
       <h2 class="display">
-        Complex ideas deserve <span>better stories.</span>
+        Complex ideas deserve
+        <span> better stories.</span>
       </h2>
 
+
       <div class="cta__contact">
-        <p class="eyebrow">Get in touch</p>
+
+        <p class="eyebrow">
+          Get in touch
+        </p>
 
         <div class="cta__links">
+
           <a href="mailto:ipsitabose.creatrix@gmail.com">
             Email ↗
           </a>
@@ -108,8 +501,13 @@ import '../styles/work.css';
           >
             LinkedIn ↗
           </a>
+
         </div>
+
       </div>
+
     </section>
+
   </main>
+
 </BaseLayout>

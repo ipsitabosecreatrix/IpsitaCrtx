@@ -1,0 +1,711 @@
+/* =========================================================
+   HERO
+========================================================= */
+.content-strategy-page {
+  width: 100%;
+  max-width: 100%;
+
+  overflow-x: clip;
+}
+
+.content-strategy-page *,
+.content-strategy-page *::before,
+.content-strategy-page *::after {
+  min-width: 0;
+}
+
+.content-strategy-page img,
+.content-strategy-page video {
+  max-width: 100%;
+}
+
+.cs-hero {
+  padding: 100px 0 105px;
+}
+
+
+.cs-hero h1 {
+  max-width: 950px;
+
+  margin: 20px 0 28px;
+
+  font-size:
+    clamp(5rem, 9vw, 9rem);
+
+  line-height: 0.86;
+}
+
+
+.cs-hero h1 span,
+.cs-detail__intro h2 span,
+.cs-next strong {
+  background:
+    var(--gradient-brand);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+.cs-hero__intro {
+  max-width: 720px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 1rem;
+
+  line-height: 1.7;
+}
+
+
+.cs-capabilities {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 34px;
+}
+
+
+.cs-capabilities span,
+.cs-card__tags span {
+  padding: 7px 10px;
+
+  border:
+    1px solid var(--line-neutral);
+
+  border-radius: 999px;
+
+  color: var(--text-soft);
+
+  font-size: 0.59rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.09em;
+}
+
+
+
+/* =========================================================
+   INDEX
+========================================================= */
+
+.cs-index {
+  padding-bottom: 90px;
+}
+
+
+.cs-card-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.cs-card {
+  position: relative;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  border:
+    1px solid var(--line-neutral);
+
+  border-radius:
+    var(--radius-card);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(154, 39, 85, 0.04),
+      rgba(157, 91, 155, 0.02)
+    );
+
+  transition:
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+
+.cs-card:hover {
+  transform:
+    translateY(-5px);
+
+  border-color:
+    rgba(226, 82, 170, 0.43);
+
+  box-shadow:
+    0 20px 45px
+    rgba(0, 0, 0, 0.15);
+}
+
+
+/*
+ * Newsletter gets full width because it is
+ * one of the deeper bodies of work.
+ */
+
+.cs-card--wide {
+  grid-column:
+    1 / -1;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.1fr)
+    minmax(0, 0.9fr);
+}
+
+
+.cs-card__visual {
+  height: 320px;
+
+  overflow: hidden;
+
+  border-bottom:
+    1px solid var(--line-neutral);
+}
+
+
+.cs-card--wide
+.cs-card__visual {
+  height: auto;
+
+  min-height: 380px;
+
+  border-bottom: 0;
+
+  border-right:
+    1px solid var(--line-neutral);
+}
+
+
+.cs-placeholder {
+  width: 100%;
+  height: 100%;
+
+  min-height: 280px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(157, 91, 155, 0.12),
+      transparent 38%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(154, 39, 85, 0.07),
+      rgba(24, 17, 21, 0.4)
+    );
+
+  color: var(--muted);
+
+  font-size: 0.61rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.13em;
+}
+
+
+
+/* =========================================================
+   CARD COPY
+========================================================= */
+
+.cs-card__content {
+  display: grid;
+
+  grid-template-columns:
+    35px minmax(0, 1fr);
+
+  gap: 14px;
+
+  padding: 24px;
+}
+
+
+.cs-card--large
+.cs-card__content {
+  min-height: 310px;
+}
+
+
+.cs-card__number {
+  padding-top: 4px;
+
+  color: var(--hot-pink);
+
+  font-size: 0.7rem;
+
+  font-weight: 800;
+}
+
+
+.cs-card__type {
+  margin: 0 0 12px;
+
+  color: var(--muted);
+
+  font-size: 0.61rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.13em;
+}
+
+
+.cs-card h2 {
+  margin: 0 0 16px;
+
+  font-size:
+    clamp(3rem, 4vw, 4.5rem);
+
+  line-height: 0.88;
+}
+
+
+.cs-card__description {
+  max-width: 475px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 0.86rem;
+
+  line-height: 1.65;
+}
+
+
+.cs-card__tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-top: 22px;
+}
+
+
+.cs-card__link {
+  margin: 26px 0 0;
+
+  color: var(--text);
+
+  font-size: 0.72rem;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.1em;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.cs-card:hover
+.cs-card__link {
+  color:
+    var(--hot-pink);
+
+  transform:
+    translateX(3px);
+}
+
+
+
+/* =========================================================
+   DETAIL SECTIONS
+========================================================= */
+
+.cs-detail {
+  padding: 90px 0;
+
+  border-top:
+    1px solid var(--line-neutral);
+
+  scroll-margin-top: 50px;
+}
+
+
+.cs-detail__intro {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(280px, 0.85fr);
+
+  gap: 70px;
+
+  align-items: end;
+
+  margin-bottom: 45px;
+}
+
+
+.cs-kicker {
+  margin: 0 0 13px;
+
+  color: var(--muted);
+
+  font-size: 0.63rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.13em;
+}
+
+
+.cs-detail__intro h2 {
+  margin: 0;
+
+  font-size:
+    clamp(3.8rem, 6vw, 6.3rem);
+
+  line-height: 0.88;
+}
+
+
+.cs-detail__intro > p {
+  max-width: 520px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 0.92rem;
+
+  line-height: 1.7;
+}
+
+
+
+/* =========================================================
+   YEAR END
+========================================================= */
+
+.cs-year-end-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+.cs-placeholder--video {
+  aspect-ratio: 16 / 9;
+
+  min-height: 0;
+
+  border-radius:
+    var(--radius-card);
+
+  overflow: hidden;
+
+  border:
+    1px solid var(--line-neutral);
+}
+
+
+.cs-year-end-grid article > p,
+.cs-archive article > p {
+  margin:
+    15px 0 5px;
+
+  font-weight: 800;
+}
+
+
+.cs-year-end-grid article > span,
+.cs-archive article > span {
+  color: var(--muted);
+
+  font-size: 0.62rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.1em;
+}
+
+
+
+/* =========================================================
+   SELECTED COMMUNICATIONS
+========================================================= */
+
+.cs-archive {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+.cs-archive
+.cs-placeholder {
+  min-height: 320px;
+
+  border:
+    1px solid var(--line-neutral);
+
+  border-radius:
+    var(--radius-card);
+}
+
+
+
+/* =========================================================
+   NEXT
+========================================================= */
+
+.cs-next {
+  padding:
+    100px 0 120px;
+
+  border-top:
+    1px solid var(--line-neutral);
+}
+
+
+.cs-next > a {
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 40px;
+
+  margin-top: 30px;
+}
+
+
+.cs-next > a > div {
+  display: grid;
+
+  grid-template-columns:
+    55px 1fr;
+
+  gap: 20px;
+}
+
+
+.cs-next > a > div > span {
+  padding-top: 12px;
+
+  color: var(--muted);
+
+  font-size: 0.68rem;
+}
+
+
+.cs-next h2 {
+  margin: 0;
+
+  font-size:
+    clamp(5rem, 9vw, 9rem);
+
+  line-height: 0.86;
+}
+
+
+.cs-next strong {
+  font-weight: inherit;
+}
+
+
+.cs-next i {
+  padding-bottom: 10px;
+
+  color: var(--hot-pink);
+
+  font-size: 2rem;
+
+  font-style: normal;
+
+  transition:
+    transform 0.2s ease;
+}
+
+
+.cs-next > a:hover i {
+  transform:
+    translate(5px, -5px);
+}
+
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .cs-hero {
+    padding:
+      70px 0 80px;
+  }
+
+
+  .cs-card--wide {
+    display: block;
+
+    grid-column:
+      auto;
+  }
+
+
+  .cs-card--wide
+  .cs-card__visual {
+    height: 320px;
+
+    min-height: 0;
+
+    border-right: 0;
+
+    border-bottom:
+      1px solid var(--line-neutral);
+  }
+
+
+  .cs-detail__intro {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+
+  .cs-archive {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 560px) {
+
+  .cs-hero {
+    padding:
+      45px 0 60px;
+  }
+
+
+  .cs-hero h1 {
+    font-size:
+      clamp(4rem, 18vw, 5.4rem);
+  }
+
+
+  .cs-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .cs-card--wide {
+    grid-column: auto;
+  }
+
+
+  .cs-card__visual,
+  .cs-card--wide
+  .cs-card__visual {
+    height: 250px;
+  }
+
+
+  .cs-card__content {
+    padding: 19px;
+
+    grid-template-columns:
+      28px minmax(0, 1fr);
+
+    gap: 10px;
+  }
+
+
+  .cs-card--large
+  .cs-card__content {
+    min-height: auto;
+  }
+
+
+  .cs-card h2 {
+    font-size:
+      clamp(2.8rem, 13vw, 3.8rem);
+  }
+
+
+  .cs-detail {
+    padding:
+      55px 0;
+  }
+
+
+  .cs-detail__intro h2 {
+    font-size:
+      clamp(3.3rem, 15vw, 4.4rem);
+  }
+
+
+  .cs-year-end-grid,
+  .cs-archive {
+    grid-template-columns: 1fr;
+  }
+
+
+  .cs-next {
+    padding:
+      60px 0 80px;
+  }
+
+
+  .cs-next > a > div {
+    grid-template-columns:
+      32px 1fr;
+
+    gap: 10px;
+  }
+
+
+  .cs-next h2 {
+    font-size:
+      clamp(3.8rem, 17vw, 5rem);
+  }
+
+}

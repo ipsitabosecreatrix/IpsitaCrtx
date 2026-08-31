@@ -1,0 +1,655 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+
+import '../../styles/webinar-communication.css';
+
+const webinars = [
+  {
+    number: '01',
+    title: 'Digital Smart Manufacturing Solutions with 21 CFR — Part 1',
+    tags: ['Life Sciences', 'Compliance'],
+    formats: ['Graphic', 'Video', 'Email'],
+    image: '/images/webinars/21cfr-part1-social.webp',
+  },
+  {
+    number: '02',
+    title: 'Digital Smart Manufacturing Solutions with 21 CFR — Part 2',
+    tags: ['Life Sciences', 'Product / Demo'],
+    formats: ['Graphic', 'Video', 'Email'],
+    image: '/images/webinars/21cfr-part2-social.webp',
+  },
+  {
+    number: '03',
+    title: 'Smart Agriculture | Sales Webinar',
+    tags: ['Agriculture', 'Sales Enablement'],
+    formats: ['Graphic', 'Email'],
+    image: '/images/webinars/smart-agriculture-social.webp',
+  },
+  {
+    number: '04',
+    title: 'Microbrewery | EAE + brewmaxx — Texpert Webinar',
+    tags: ['CPG', 'Technical Webinar'],
+    formats: ['Graphic', 'Video', 'Email'],
+    image: '/images/webinars/microbrewery-social.webp',
+  },
+  {
+    number: '05',
+    title: 'Hannover Messe 2025 Demo + Lab Tour',
+    tags: ['Event', 'Demo / Lab Tour'],
+    formats: ['Graphic', 'Video', 'Email'],
+    image: '/images/webinars/hannover-messe-social.webp',
+  },
+  {
+    number: '06',
+    title: 'EAE for CPG | Texpert Webinar',
+    tags: ['CPG', 'Product Communication'],
+    formats: ['Graphic', 'Email'],
+    image: '/images/webinars/eae-cpg-webinar2.webp',
+  },
+];
+
+const messagingExamples = [
+  {
+    subject: 'Life Science with 21 CFR',
+    emphasis: 'Compliance-led technical communication',
+    description:
+      'Positioning digital traceability, controlled workflows and compliant manufacturing systems in a way that established why the subject mattered to the audience.',
+  },
+  {
+    subject: 'Smart Agriculture',
+    emphasis: 'Sales-oriented solution communication',
+    description:
+      'Framing the webinar around the operational and commercial relevance of the solution rather than only its technical functionality.',
+  },
+  {
+    subject: 'Microbrewery | ProLeiT',
+    emphasis: 'Industry-specific technical communication',
+    description:
+      'Presenting the technology through the context of a recognisable brewing process and industry-specific application.',
+  },
+];
+---
+
+<BaseLayout
+  title="Webinar Communication | Ipsita Bose"
+  description="Technical webinar communication across campaign visuals, video, messaging and audience-facing content."
+>
+  <Header active="work" />
+
+  <main class="webinar-page">
+
+    <!-- HERO -->
+    <section class="webinar-hero shell">
+        <a
+        class="webinar-back"
+        href="/work/content-strategy"
+        >
+        ← Content Strategy
+        </a>
+      <p class="eyebrow">
+        Content Strategy / Webinar Communication
+      </p>
+
+      <div class="webinar-hero__grid">
+
+        <div class="webinar-hero__copy">
+
+          <h1 class="display">
+            Webinar<br />
+            <span>Communication.</span>
+          </h1>
+
+          <p class="webinar-hero__lead">
+            Multi-format communication for technical webinars across
+            promotional graphics, video and audience-facing campaign content.
+          </p>
+
+          <p class="webinar-hero__intro">
+            A series of webinar communications developed across industrial and
+            technical subjects, translating specialised topics into clear
+            promotional and informational content across multiple touchpoints.
+          </p>
+
+          <div class="webinar-tags">
+            <span>Campaign Communication</span>
+            <span>Content Structuring</span>
+            <span>Technical Storytelling</span>
+            <span>Visual Design</span>
+            <span>Video</span>
+          </div>
+
+        </div>
+
+        <div class="webinar-hero__visual">
+
+          <div class="webinar-hero-collage">
+
+            <img
+              class="webinar-hero-collage__main"
+              src="/images/webinars/21cfr-part1-social.webp"
+              alt="21 CFR webinar campaign visual"
+            />
+
+            <img
+              src="/images/webinars/smart-agriculture-social.webp"
+              alt="Smart Agriculture webinar visual"
+            />
+
+            <img
+              src="/images/webinars/microbrewery-social.webp"
+              alt="Microbrewery webinar visual"
+            />
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- 01 PORTFOLIO -->
+    <section class="webinar-section shell">
+
+      <div class="section-heading">
+        <p class="eyebrow">01 / Webinar Portfolio</p>
+
+            <div class="section-rule">
+                <span>⌁</span>
+            </div>
+        </div>
+
+      <div class="webinar-section__intro">
+
+        <h2 class="display">
+          Different audiences.<br />
+          <span>Different emphasis.</span>
+        </h2>
+
+        <p>
+          The subject, audience and available formats changed between sessions,
+          but each project required specialised information to be translated
+          into clear audience-facing communication.
+        </p>
+
+      </div>
+
+      <div class="webinar-grid">
+
+        {
+          webinars.map((webinar) => (
+
+            <article class="webinar-card">
+
+              <div class="webinar-card__visual">
+
+                <img
+                  src={webinar.image}
+                  alt={webinar.title}
+                  loading="lazy"
+                />
+
+              </div>
+
+              <div class="webinar-card__content">
+
+                <span class="webinar-card__number">
+                  {webinar.number}
+                </span>
+
+                <div>
+
+                  <h3>
+                    {webinar.title}
+                  </h3>
+
+                  <div class="webinar-card__tags">
+                    {
+                      webinar.tags.map((tag) => (
+                        <span>{tag}</span>
+                      ))
+                    }
+                  </div>
+
+                  <p class="webinar-card__formats">
+                    {webinar.formats.join(' · ')}
+                  </p>
+
+                </div>
+
+              </div>
+
+            </article>
+
+          ))
+        }
+
+      </div>
+
+    </section>
+
+
+    <!-- 02 MESSAGE TRANSLATION -->
+    <section class="webinar-section shell">
+
+      <div class="section-heading">
+        <p class="eyebrow">
+          02 / Messaging Strategy
+        </p>
+
+        <div class="section-rule">
+                <span>⌁</span>
+            </div>
+      </div>
+
+      <div class="webinar-section__intro">
+
+        <h2 class="display">
+          Technical subjects.<br />
+          <span>reframed.</span>
+        </h2>
+
+        <p>
+          The campaigns were not treated as interchangeable templates.
+          Communication changed according to the technical subject,
+          audience and reason for attending.
+        </p>
+
+      </div>
+
+      <div class="messaging-list">
+
+        {
+          messagingExamples.map((item) => (
+
+            <article>
+
+              <div class="messaging-list__subject">
+                <span>Subject</span>
+                <h3>{item.subject}</h3>
+              </div>
+
+              <div class="messaging-list__arrow">
+                →
+              </div>
+
+              <div class="messaging-list__message">
+                <span>{item.emphasis}</span>
+
+                <p>
+                  {item.description}
+                </p>
+              </div>
+
+            </article>
+
+          ))
+        }
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+     03 — VIDEO-LED PROMOTION
+      ====================================================== -->
+
+      <section class="webinar-section shell">
+
+        <div class="section-heading">
+          <p class="eyebrow">03 / Video-Led Promotion</p>
+
+          <div class="section-rule">
+            <span>⌁</span>
+          </div>
+        </div>
+
+
+        <div class="webinar-section__intro">
+
+          <h2 class="display">
+            Extending promotion<br />
+            <span>through motion.</span>
+          </h2>
+
+          <p>
+            Video added pacing, narrative and anticipation to webinar promotion,
+            allowing campaign communication to continue beyond static assets and
+            support different stages of the webinar journey.
+          </p>
+
+        </div>
+
+
+        <!-- =====================================================
+            21 CFR
+        ====================================================== -->
+
+        <div class="video-group">
+
+          <div class="video-group__heading">
+
+            <span>Life Sciences</span>
+
+            <h3 class="display">
+              21 CFR Compliance
+            </h3>
+
+          </div>
+
+
+          <div class="video-group__grid video-group__grid--two">
+
+            <article class="video-item">
+
+              <video controls preload="metadata">
+                <source
+                  src="/videos/webinars/21cfr-part1-trailer.webm"
+                  type="video/webm"
+                />
+              </video>
+
+              <h4>
+                Part 01
+              </h4>
+
+              <dl>
+
+                <div>
+                  <dt>Purpose</dt>
+                  <dd>Build anticipation before the first session</dd>
+                </div>
+
+                <div>
+                  <dt>Format</dt>
+                  <dd>Webinar promotional video</dd>
+                </div>
+
+                <div>
+                  <dt>Contribution</dt>
+                  <dd>Script / visual development / editing</dd>
+                </div>
+
+              </dl>
+
+            </article>
+
+
+            <article class="video-item">
+
+              <video controls preload="metadata">
+                <source
+                  src="/videos/webinars/21cfr-part2-trailer.webm"
+                  type="video/webm"
+                />
+              </video>
+
+              <h4>
+                Part 02
+              </h4>
+
+              <dl>
+
+                <div>
+                  <dt>Purpose</dt>
+                  <dd>Continue the webinar narrative into the second session</dd>
+                </div>
+
+                <div>
+                  <dt>Format</dt>
+                  <dd>Webinar promotional video</dd>
+                </div>
+
+                <div>
+                  <dt>Contribution</dt>
+                  <dd>Script / visual development / editing</dd>
+                </div>
+
+              </dl>
+
+            </article>
+
+          </div>
+
+        </div>
+
+
+        <!-- =====================================================
+            MICROBREWERY
+        ====================================================== -->
+
+        <div class="video-group">
+
+          <div class="video-group__heading">
+
+            <span>CPG</span>
+
+            <h3 class="display">
+              Microbrewery / ProLeiT
+            </h3>
+
+          </div>
+
+
+          <div class="video-group__grid video-group__grid--single">
+
+            <article class="video-item">
+
+              <video controls preload="metadata">
+                <source
+                  src="/videos/webinars/microbrewery-trailer.webm"
+                  type="video/webm"
+                />
+              </video>
+
+              <h4>
+                Webinar Promotion
+              </h4>
+
+              <dl>
+
+                <div>
+                  <dt>Purpose</dt>
+                  <dd>Promote industry-specific technical content</dd>
+                </div>
+
+                <div>
+                  <dt>Format</dt>
+                  <dd>Webinar promotional video</dd>
+                </div>
+
+                <div>
+                  <dt>Contribution</dt>
+                  <dd>Visual development / editing</dd>
+                </div>
+
+              </dl>
+
+            </article>
+
+          </div>
+
+        </div>
+
+
+        <!-- =====================================================
+            HANNOVER MESSE
+        ====================================================== -->
+
+        <div class="video-group">
+
+          <div class="video-group__heading">
+
+            <span>Event / CPG</span>
+
+            <h3 class="display">
+              Hannover Messe Demo + Lab Tour
+            </h3>
+
+          </div>
+
+
+          <div class="video-group__grid video-group__grid--two">
+
+            <article class="video-item">
+
+              <video controls preload="metadata">
+                <source
+                  src="/videos/webinars/hannover-messe-demo.webm"
+                  type="video/webm"
+                />
+              </video>
+
+              <h4>
+                Opening Promotion
+              </h4>
+
+              <dl>
+
+                <div>
+                  <dt>Purpose</dt>
+                  <dd>Introduce the event-led webinar content</dd>
+                </div>
+
+                <div>
+                  <dt>Format</dt>
+                  <dd>Promotional video</dd>
+                </div>
+
+                <div>
+                  <dt>Contribution</dt>
+                  <dd>Visual development / editing</dd>
+                </div>
+
+              </dl>
+
+            </article>
+
+
+            <article class="video-item">
+
+              <video controls preload="metadata">
+                <source
+                  src="/videos/webinars/hannover-messe-recap.webm"
+                  type="video/webm"
+                />
+              </video>
+
+              <h4>
+                Closing Communication
+              </h4>
+
+              <dl>
+
+                <div>
+                  <dt>Purpose</dt>
+                  <dd>Close the webinar sequence and reinforce the event narrative</dd>
+                </div>
+
+                <div>
+                  <dt>Format</dt>
+                  <dd>Closing video</dd>
+                </div>
+
+                <div>
+                  <dt>Contribution</dt>
+                  <dd>Visual development / editing</dd>
+                </div>
+
+              </dl>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    
+    <!-- 05 CONTRIBUTION -->
+    <section class="webinar-section shell">
+
+      <div class="section-heading">
+        <p class="eyebrow">04 / My Contribution</p>
+        <div class="section-rule">
+                <span>⌁</span>
+            </div>
+      </div>
+
+      <div class="contribution-grid">
+
+        <article>
+
+          <span>Content</span>
+
+          <ul>
+            <li>Technical input translation</li>
+            <li>Audience-facing messaging</li>
+            <li>Campaign communication structure</li>
+            <li>Scriptwriting where applicable</li>
+          </ul>
+
+        </article>
+
+
+        <article>
+
+          <span>Creative</span>
+
+          <ul>
+            <li>Promotional visual development</li>
+            <li>Video editing</li>
+            <li>Motion and visual direction</li>
+            <li>Supporting campaign assets</li>
+          </ul>
+
+        </article>
+
+
+        <article>
+
+          <span>Collaboration</span>
+
+          <ul>
+            <li>Working from SME and product inputs</li>
+            <li>Incorporating technical feedback</li>
+            <li>Adapting communication to event requirements</li>
+          </ul>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- Back -->
+    <section class="webinar-next shell">
+
+      <p class="eyebrow">
+        BACK TO
+      </p>
+
+      <a href="/work/content-strategy">
+
+        <div>
+          <h2 class="display">
+            Content<br />
+            <strong>Strategy.</strong>
+          </h2>
+
+        </div>
+
+        <i>↗</i>
+
+      </a>
+
+    </section>
+
+  </main>
+
+</BaseLayout>
