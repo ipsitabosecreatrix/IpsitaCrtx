@@ -1,0 +1,831 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+
+import '../../styles/solution-consultant-week.css';
+
+
+const teaserPosts = [
+  {
+    number: '01',
+    day: 'Day 01',
+    topic: 'IMPACT Day',
+    image: '/images/solution-consultant-week/teaser1.webp',
+  },
+  {
+    number: '02',
+    day: 'Day 02',
+    topic: 'Sci Life',
+    image: '/images/solution-consultant-week/teaser2.webp',
+  },
+  {
+    number: '03',
+    day: 'Day 03',
+    topic: 'From Farm to Fork',
+    image: '/images/solution-consultant-week/solution-consultant-week-hero2.webp',
+  },
+  {
+    number: '04',
+    day: 'Day 04',
+    topic: 'Innovation Day',
+    image: '/images/solution-consultant-week/teaser4.webp',
+  },
+  {
+    number: '05',
+    day: 'Day 05',
+    topic: 'Wrap Up',
+    image: '/images/solution-consultant-week/teaser5.webp',
+  },
+];
+
+
+const speakerPosts = [
+  {
+    number: '01',
+    day: 'Day 01',
+    topic: 'Session topic',
+    image: '/images/solution-consultant-week/speaker1.webp',
+  },
+  {
+    number: '02',
+    day: 'Day 02',
+    topic: 'Session topic',
+    image: '/images/solution-consultant-week/speaker2.webp',
+  },
+  {
+    number: '03',
+    day: 'Day 03',
+    topic: 'Session topic',
+    image: '/images/solution-consultant-week/speaker3.webp',
+  },
+  {
+    number: '04',
+    day: 'Day 04',
+    topic: 'Session topic',
+    image: '/images/solution-consultant-week/solution-consultant-week-hero3.webp',
+  },
+  {
+    number: '05',
+    day: 'Day 05',
+    topic: 'Session topic',
+    image: '/images/solution-consultant-week/speaker5.webp',
+  },
+];
+
+
+const lifecycle = [
+  {
+    phase: '01',
+    label: 'Tease',
+    role: 'Build awareness',
+    output: 'Five-day topic campaign',
+  },
+  {
+    phase: '02',
+    label: 'Inform',
+    role: 'Add detail and context',
+    output: 'Speaker + session campaign',
+  },
+  {
+    phase: '03',
+    label: 'Engage',
+    role: 'Extend event communication',
+    output: 'Video communication',
+  },
+  {
+    phase: '04',
+    label: 'Access',
+    role: 'Preserve event knowledge',
+    output: 'SharePoint resource hub',
+  },
+];
+---
+
+<BaseLayout
+  title="SCW | Ipsita CRTX"
+  description="A five-day internal event communication campaign spanning phased social content, videos and post-event knowledge access."
+>
+  <Header active="work" />
+
+  <main class="scw-page">
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="scw-hero shell">
+
+      <a
+        class="scw-back"
+        href="/work/content-strategy"
+      >
+        ← Content Strategy
+      </a>
+
+      <p class="eyebrow">
+        Content Strategy / Event Communication
+      </p>
+
+      <div class="scw-hero__grid">
+
+        <div class="scw-hero__copy">
+
+          <h1 class="display">
+            Solution<br />
+            <span>Consultant Week.</span>
+          </h1>
+
+          <p class="scw-hero__lead">
+            A five-day internal event communication campaign built around
+            technical topics, speakers, video and shared resources.
+          </p>
+
+          <p class="scw-hero__intro">
+            Communication was structured across multiple stages of the event,
+            from building awareness of the five-day programme to introducing
+            speakers and sessions and creating an accessible post-event
+            knowledge resource.
+          </p>
+
+          <div class="scw-tags">
+            <span>Event Communication</span>
+            <span>Campaign Sequencing</span>
+            <span>Content Structuring</span>
+            <span>Video</span>
+            <span>Information Architecture</span>
+          </div>
+
+        </div>
+
+
+        <div class="scw-hero__visual">
+
+          <!-- Replace these with your strongest real assets -->
+
+          <div class="scw-hero-collage">
+
+            <img
+              class="scw-hero-collage__main"
+              src="/images/solution-consultant-week/solution-consultant-week-hero1.webp"
+              alt="Solution Consultant Week campaign visual"
+            />
+
+            <img
+              src="/images/solution-consultant-week/solution-consultant-week-hero2.webp"
+              alt="Solution Consultant Week campaign post"
+            />
+
+            <img
+              src="/images/solution-consultant-week/solution-consultant-week-hero3.webp"
+              alt="Solution Consultant Week communication asset"
+            />
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         01 — COMMUNICATION CHALLENGE
+    ====================================================== -->
+
+    <section class="scw-section shell">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          01 / Communication Challenge
+        </p>
+
+        <div class="section-rule">
+          <span>⌁</span>
+        </div>
+
+      </div>
+
+
+      <div class="scw-section__intro">
+
+        <h2 class="display">
+          Five days. one<br />
+          <span>connected experience.</span>
+        </h2>
+
+        <p>
+          The event brought together different technical themes, speakers and
+          presentation resources across five days. Communication needed to
+          establish the programme clearly, create anticipation before the
+          sessions and give participants a structured way to return to event
+          material afterwards.
+        </p>
+
+      </div>
+
+
+      <div class="scw-context-grid">
+
+        <article>
+          <span>Duration</span>
+          <strong>5 Days</strong>
+        </article>
+
+        <article>
+          <span>Audience</span>
+          <strong>CPG Solution Consultants</strong>
+        </article>
+
+        <article>
+          <span>Formats</span>
+          <strong>Campaign / Video / Resource Hub</strong>
+        </article>
+
+        <article>
+          <span>Role</span>
+          <strong>Content + Creative</strong>
+        </article>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         02 — COMMUNICATION SYSTEM
+    ====================================================== -->
+
+    <section class="scw-section shell">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          02 / Event Communication System
+        </p>
+
+        <div class="section-rule">
+          <span>⌁</span>
+        </div>
+
+      </div>
+
+
+      <div class="scw-section__intro">
+
+        <h2 class="display">
+          From anticipation <br /> to
+          <span> access.</span>
+        </h2>
+
+        <p>
+          Rather than treating each asset independently, communication was
+          organised around the role it played in the event lifecycle.
+        </p>
+
+      </div>
+
+
+      <div class="scw-system">
+
+        {
+          lifecycle.map((item) => (
+
+            <article>
+
+              <span class="scw-system__number">
+                {item.phase}
+              </span>
+
+              <div>
+                <h3>{item.label}</h3>
+                <p>{item.role}</p>
+                <span>{item.output}</span>
+              </div>
+
+            </article>
+
+          ))
+        }
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         03 — TOPIC TEASER CAMPAIGN
+    ====================================================== -->
+
+    <section class="scw-section shell">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          03 / Topic Teaser Campaign
+        </p>
+
+        <div class="section-rule">
+          <span>⌁</span>
+        </div>
+
+      </div>
+
+
+      <div class="scw-section__intro">
+
+        <h2 class="display">
+          Five days.<br />
+          <span>Five themes.</span>
+        </h2>
+
+        <p>
+          The first campaign introduced the structure of the week through one
+          visual per day, giving each technical theme its own communication
+          moment while maintaining a consistent campaign identity.
+        </p>
+
+      </div>
+
+
+      <div class="scw-five-grid">
+
+        {
+          teaserPosts.map((post) => (
+
+            <article class="scw-post">
+
+              <div class="scw-post__visual">
+
+                <img
+                  src={post.image}
+                  alt={`${post.day} — ${post.topic}`}
+                  loading="lazy"
+                />
+
+              </div>
+
+              <div class="scw-post__meta">
+
+                <span>{post.number}</span>
+
+                <div>
+                  <p>{post.day}</p>
+                  <h3>{post.topic}</h3>
+                </div>
+
+              </div>
+
+            </article>
+
+          ))
+        }
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         04 — SPEAKER + SESSION CAMPAIGN
+    ====================================================== -->
+
+    <section class="scw-section shell">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          04 / Speaker + Session Campaign
+        </p>
+
+        <div class="section-rule">
+          <span>⌁</span>
+        </div>
+
+      </div>
+
+
+      <div class="scw-section__intro">
+
+        <h2 class="display">
+          From topic preview to
+          <span> session detail.</span>
+        </h2>
+
+        <p>
+          The second campaign added specificity by connecting each day with
+          its speaker and session topic, shifting communication from broad
+          anticipation toward actionable programme information.
+        </p>
+
+      </div>
+
+
+      <div class="scw-five-grid">
+
+        {
+          speakerPosts.map((post) => (
+
+            <article class="scw-post">
+
+              <div class="scw-post__visual">
+
+                <img
+                  src={post.image}
+                  alt={`${post.day} speaker communication`}
+                  loading="lazy"
+                />
+
+              </div>
+
+              <div class="scw-post__meta">
+
+                <span>{post.number}</span>
+
+                <div>
+                  <p>{post.day}</p>
+                  <h3>{post.topic}</h3>
+                </div>
+
+              </div>
+
+            </article>
+
+          ))
+        }
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         05 — VIDEO COMMUNICATION
+    ====================================================== -->
+
+    <section class="scw-section shell">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          05 / Video Communication
+        </p>
+
+        <div class="section-rule">
+          <span>⌁</span>
+        </div>
+
+      </div>
+
+
+      <div class="scw-section__intro">
+
+        <h2 class="display">
+          Extending the campaign<br />
+          <span>through motion.</span>
+        </h2>
+
+        <p>
+          Video added another communication layer to the campaign, using
+          movement, pacing and sequencing to reinforce the event narrative.
+        </p>
+
+      </div>
+
+
+      <div class="scw-video-grid">
+
+        <article class="scw-video-item">
+
+          <video
+            controls
+            preload="metadata">
+            <source
+              src="https://pub-283e72b9cc94409895f13c178ff47732.r2.dev/trailer.webm"
+              type="video/webm"
+            />
+          </video>
+
+          <h3>Video 01</h3>
+
+          <dl>
+
+            <div>
+              <dt>Purpose</dt>
+              <dd>Introduce the event & build anticipation</dd>
+            </div>
+
+            <div>
+              <dt>Format</dt>
+              <dd>Event trailer</dd>
+            </div>
+
+            <div>
+              <dt>Contribution</dt>
+              <dd>Content / Visual Development / Editing</dd>
+            </div>
+
+          </dl>
+
+        </article>
+
+
+        <article class="scw-video-item">
+
+          <video
+            controls
+            preload="metadata">
+              <source
+                src="https://pub-283e72b9cc94409895f13c178ff47732.r2.dev/wrapup.webm"
+                type="video/webm"
+              />
+          </video>
+
+          <h3>Video 02</h3>
+
+          <dl>
+
+            <div>
+              <dt>Purpose</dt>
+              <dd>Capture key moments & close the narrative</dd>
+            </div>
+
+            <div>
+              <dt>Format</dt>
+              <dd>Event recap</dd>
+            </div>
+
+            <div>
+              <dt>Contribution</dt>
+              <dd>Content / Visual Development / Editing</dd>
+            </div>
+
+          </dl>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         06 — RESOURCE HUB
+    ====================================================== -->
+
+    <section class="scw-section shell">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          06 / Resource Hub
+        </p>
+
+        <div class="section-rule">
+          <span>⌁</span>
+        </div>
+
+      </div>
+
+
+      <div class="scw-section__intro">
+
+        <h2 class="display">
+          From Live event<br />
+          <span>to lasting resource.</span>
+        </h2>
+
+        <p>
+          A dedicated SharePoint page consolidated presentations from across
+          the five-day programme into a single reference point, extending the
+          usefulness of the event beyond the live sessions.
+        </p>
+
+      </div>
+
+
+      <div class="scw-resource">
+
+        <div class="scw-resource__visual">
+
+          <!-- Use a sanitized screenshot or recreated mockup -->
+
+          <img
+            src="/images/solution-consultant-week/scwsp.webp"
+            alt="Solution Consultant Week resource hub"
+            loading="lazy"
+          />
+
+        </div>
+
+
+        <div class="scw-resource__content">
+
+          <p class="scw-kicker">
+            Information Architecture
+          </p>
+
+          <h3 class="display">
+            One destination for five days of material.
+          </h3>
+
+          <p>
+            Presentations were organised by event day and topic so participants
+            could locate and revisit session material without navigating
+            separate conversations, links or files.
+          </p>
+
+          <ul>
+            <li>Day-based organisation</li>
+            <li>Presentation access</li>
+            <li>Clear information hierarchy</li>
+            <li>Post-event reference</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         07 — EVENT LIFECYCLE SUMMARY
+    ====================================================== -->
+
+    <section class="scw-section shell">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          07 / Event Lifecycle
+        </p>
+
+        <div class="section-rule">
+          <span>⌁</span>
+        </div>
+
+      </div>
+
+
+      <div class="scw-section__intro">
+
+        <h2 class="display">
+          One event.<br />
+          <span>Multiple content roles.</span>
+        </h2>
+
+        <p>
+          Each communication format addressed a different requirement within
+          the event journey, from initial awareness to long-term access.
+        </p>
+
+      </div>
+
+
+      <div class="scw-lifecycle-table">
+
+        <div class="scw-lifecycle-table__head">
+          <span>Stage</span>
+          <span>Communication role</span>
+          <span>Output</span>
+        </div>
+
+        <div>
+          <span>Pre-event</span>
+          <span>Build awareness</span>
+          <span>Topic teaser campaign</span>
+        </div>
+
+        <div>
+          <span>Pre-event</span>
+          <span>Add detail + credibility</span>
+          <span>Speaker / session campaign</span>
+        </div>
+
+        <div>
+          <span>Event communication</span>
+          <span>Extend engagement</span>
+          <span>Video</span>
+        </div>
+
+        <div>
+          <span>Post-event</span>
+          <span>Preserve knowledge access</span>
+          <span>SharePoint resource hub</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         08 — MY CONTRIBUTION
+    ====================================================== -->
+
+    <section class="scw-section shell">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          08 / My Contribution
+        </p>
+
+        <div class="section-rule">
+          <span>⌁</span>
+        </div>
+
+      </div>
+
+
+      <div class="scw-contribution-grid">
+
+        <article>
+
+          <span>Content</span>
+
+          <ul>
+            <li>Event communication structure</li>
+            <li>Campaign sequencing</li>
+            <li>Topic and speaker information structuring</li>
+            <li>Audience-facing messaging</li>
+          </ul>
+
+        </article>
+
+
+        <article>
+
+          <span>Creative</span>
+
+          <ul>
+            <li>Campaign visual development</li>
+            <li>Video editing</li>
+            <li>Motion and visual direction</li>
+            <li>Cross-format visual consistency</li>
+          </ul>
+
+        </article>
+
+
+        <article>
+
+          <span>Digital</span>
+
+          <ul>
+            <li>SharePoint page structure</li>
+            <li>Presentation organisation</li>
+            <li>Information hierarchy</li>
+            <li>Post-event resource access</li>
+          </ul>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BACK / NEXT
+    ====================================================== -->
+
+    <section class="scw-next shell">
+
+      <p class="eyebrow">
+        GO TO
+      </p>
+
+      <a href="/work/monthly-newsletter">
+
+        <div>
+
+          <h2 class="display">
+            Monthly<br />
+            <strong>Newsletter.</strong>
+          </h2>
+
+        </div>
+
+        <i aria-hidden="true">
+          ↗
+        </i>
+
+      </a>
+
+    </section>
+
+  </main>
+
+</BaseLayout>
