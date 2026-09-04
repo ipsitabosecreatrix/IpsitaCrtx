@@ -1,0 +1,1625 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+
+import '../../styles/editorial-&-newsletter-systems.css';
+
+const newsletterIssues2025 = [
+  {
+    date: 'Jun 2025',
+    image: '/images/newsletters/jun25.webp',
+    stories: ['ProLeiT R&D Visit', 'Mars Petcare Presentation'],
+  },
+  {
+    date: 'Jul 2025',
+    image: '/images/newsletters/jul25.webp',
+    stories: ['Lab Visit', 'Customer Presentation', 'Cross Collaborations', 'Lab Tour'],
+  },
+  {
+    date: 'Aug 2025',
+    image: '/images/newsletters/aug25.webp',
+    stories: ['EVP Visit', 'Lab Visits', 'Water & Environment', 'Innovation Talk Bangkok', 'Customer Presentation'],
+  },
+  {
+    date: 'Sep 2025',
+    image: '/images/newsletters/sep25.webp',
+    stories: ['Microbrewery Webinar', 'SI Workshop', 'Events'],
+  },
+  {
+    date: 'Oct 2025',
+    image: '/images/newsletters/oct25.webp',
+    stories: ['Lab Tour', 'Scrum Masters Meet', 'Events'],
+  },
+  {
+    date: 'Nov 2025',
+    image: '/images/newsletters/nov25.webp',
+    stories: ['SI Workshops', 'Events'],
+  },
+];
+
+const newsletterIssues2026 = [
+  {
+    date: 'Jan–Feb 2026',
+    image: '/images/newsletters/feb26.webp',
+    stories: ['Customer Presentations', 'Lab Tours', 'Lab Innaugration'],
+  },
+  {
+    date: 'Mar–Apr 2026',
+    image: '/images/newsletters/apr26.webp',
+    stories: ['New Joinees', 'Hannover Messe 2026', 'ISPE 2026', 'Customer Presentation'],
+  },
+  {
+    date: 'May–Jun 2026',
+    image: '/images/newsletters/jun26.webp',
+    stories: ['Life Science Webinar', 'Lab Tours', ' Customer Presentation'],
+  },
+  {
+    date: 'Aug 2026',
+    image: '/images/newsletters/aug26.webp',
+    stories: ['Lab Tours', 'Cross Collaboration'],
+  },
+  {
+    date: 'Special Edition',
+    image: '/images/newsletters/evp26.webp',
+    stories: ['EVP Visit', 'Customer Presentations'],
+    special: true,
+  },
+];
+
+const cynlrIssues = [
+  {
+    number: '01',
+    title: 'Talent',
+    question: 'Do I want to build here?',
+    purpose: 'Technical depth / Research / Career opportunity',
+    image: '/images/newsletters/talent.webp',
+    stories: [
+      'Hard-technology work',
+      'Research depth',
+      'Career opportunity',
+    ],
+  },
+  {
+    number: '02',
+    title: 'Investor',
+    question: 'Can this scale?',
+    purpose: 'Traction / Defensibility / Growth',
+    image: '/images/newsletters/investor.webp',
+    stories: [
+      'Commercial traction',
+      'Technical defensibility',
+      'Growth signals',
+    ],
+  },
+  {
+    number: '03',
+    title: 'Vendor',
+    question: 'Where do we fit?',
+    purpose: 'Ecosystem / Integration / Partnership',
+    image: '/images/newsletters/vendor.webp',
+    stories: [
+      'Ecosystem relevance',
+      'Integration potential',
+      'Partnership opportunity',
+    ],
+  },
+  {
+    number: '04',
+    title: 'Customer',
+    question: 'Can this solve my problem?',
+    purpose: 'Validation / Use cases / Manufacturing value',
+    image: '/images/newsletters/customer.webp',
+    stories: [
+      'Enterprise validation',
+      'Manufacturing relevance',
+      'Use-case proof',
+    ],
+  },
+];
+
+const workflow = [
+  {
+    number: '01',
+    label: 'Collect',
+    text: 'Gather monthly photos, activity updates and stakeholder inputs.',
+  },
+  {
+    number: '02',
+    label: 'Select',
+    text: 'Identify which activities deserve visibility in the issue.',
+  },
+  {
+    number: '03',
+    label: 'Prioritise',
+    text: 'Balance visits, demos, presentations, events and announcements.',
+  },
+  {
+    number: '04',
+    label: 'Write',
+    text: 'Condense technical and internal updates into short readable copy.',
+  },
+  {
+    number: '05',
+    label: 'Design',
+    text: 'Adapt the recurring visual system to changing content volume.',
+  },
+  {
+    number: '06',
+    label: 'Distribute',
+    text: 'Publish across internal communities and surface relevant stakeholders.',
+  },
+];
+
+const contentCategories = [
+  'Lab Visits',
+  'Presentations',
+  'Demo Activity',
+  'Events',
+  'Partner / OEM Engagement',
+  'Team Highlights',
+];
+---
+
+<BaseLayout
+  title="Editorial | Ipsita CRTX"
+  description="Recurring editorial systems spanning internal communication, content curation, copy development and brand storytelling."
+>
+  <Header active="work" />
+
+  <main class="newsletter-page">
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="newsletter-hero shell">
+
+      <a
+        class="newsletter-back"
+        href="/work/content-strategy"
+      >
+        ← Content Strategy
+      </a>
+
+      <p class="eyebrow">
+        Content Strategy / Editorial System
+      </p>
+
+      <div class="newsletter-hero__grid">
+
+        <div class="newsletter-hero__copy">
+
+          <h1 class="display">
+            Editorial &<br />
+            <span>Newsletter Systems.</span>
+          </h1>
+
+          <p class="newsletter-hero__lead">
+            I build editorial systems around what the audience needs to notice, understand and remember.
+
+
+          </p>
+
+          <p class="newsletter-hero__intro">
+            My process is to identify the strongest stories, establish hierarchy, compress complex
+            information without stripping away context, and create a consistent structure that can adapt
+            as the content changes.
+          </p>
+
+          <div class="newsletter-tags">
+            <span>Editorial Strategy</span>
+            <span>Content Curation</span>
+            <span>Copy Development</span>
+            <span>Information Hierarchy</span>
+            <span>Visual Systems</span>
+          </div>
+
+        </div>
+
+
+        <div class="newsletter-hero__visual">
+
+          <div class="newsletter-hero-collage">
+
+            <img
+              class="newsletter-hero-collage__main"
+              src="/images/newsletters/hero1.webp"
+              alt="Newsletter editorial work"
+            />
+
+            <img
+              src="/images/newsletters/hero2.webp"
+              alt="Schneider Electric newsletter"
+            />
+
+            <img
+              src="/images/newsletters/hero3.webp"
+              alt="CynLr newsletter concept"
+            />
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         01 — TWO SYSTEMS
+    ====================================================== -->
+
+    <section class="newsletter-section shell">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          01 / Two Editorial Systems
+        </p>
+
+        <div class="section-rule">
+          <span>⌁</span>
+        </div>
+
+      </div>
+
+
+      <div class="newsletter-section__intro">
+
+        <h2 class="display">
+          One discipline.<br />
+          <span>Two Contexts.</span>
+        </h2>
+
+        <p>
+          The Schneider Electric newsletters demonstrate the ability to sustain
+          a recurring editorial system over time. The CynLr work explores how
+          an editorial concept can be built from a blank strategic brief.
+        </p>
+
+      </div>
+
+
+      <div class="newsletter-comparison">
+
+        <article>
+
+          <span class="newsletter-comparison__index">01</span>
+
+          <p class="newsletter-kicker">
+            Schneider Electric
+          </p>
+
+          <h3 class="display">
+            Recurring Systems.
+          </h3>
+
+          <p>
+            Multiple editions produced from changing monthly inputs while
+            maintaining a consistent information and visual system.
+          </p>
+
+          <ul>
+            <li>Recurring production</li>
+            <li>Multiple stakeholder inputs</li>
+            <li>High-volume content selection</li>
+            <li>Internal distribution</li>
+          </ul>
+
+        </article>
+
+
+        <article>
+
+          <span class="newsletter-comparison__index">02</span>
+
+          <p class="newsletter-kicker">
+            CynLr
+          </p>
+
+          <h3 class="display">
+            Editorial exploration.
+          </h3>
+
+          <p>
+            Four newsletter concepts developed as part of a content strategy
+            problem statement, with greater emphasis on editorial voice,
+            narrative and strategic framing.
+          </p>
+
+          <ul>
+            <li>Editorial concept development</li>
+            <li>Brand voice</li>
+            <li>Content pillars</li>
+            <li>Narrative structure</li>
+          </ul>
+
+        </article>
+      </div>
+
+      <div class="newsletter-system-ctas">
+
+      <a
+        href="#schneider-newsletters"
+        class="newsletter-system-cta"
+      >
+        <span>01</span>
+
+        <div>
+          <small>Explore system</small>
+          <strong>Schneider Electric</strong>
+        </div>
+
+        <i aria-hidden="true">↓</i>
+      </a>
+
+
+      <a
+        href="#cynlr-newsletters"
+        class="newsletter-system-cta"
+      >
+        <span>02</span>
+
+        <div>
+          <small>Explore system</small>
+          <strong>CynLr</strong>
+        </div>
+
+        <i aria-hidden="true">↓</i>
+      </a>
+
+    </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         02 — SCHNEIDER SYSTEM
+    ====================================================== -->
+
+    <section class="newsletter-section shell" id="schneider-newsletters">
+
+    <div class="section-heading">
+      <p class="eyebrow">
+        Schneider Electric
+      </p>
+
+      <div class="section-rule">
+        <span>⌁</span>
+      </div>
+    </div>
+
+
+    <div class="newsletter-section__intro">
+
+      <h2 class="display">
+        Editorial evolution<br />
+        <span>across recurring issues.</span>
+      </h2>
+
+      <p>
+        The system evolved from open, modular editorial compositions toward a
+        denser and more structured visual language as the volume and complexity
+        of lab communication increased.
+      </p>
+
+    </div>
+
+    <!-- =====================================================
+        2026
+    ====================================================== -->
+
+    <div class="newsletter-archive-year">
+
+      <div class="newsletter-archive-year__heading">
+        <span>02</span>
+
+        <div>
+          <p class="newsletter-kicker">
+            Evolved editorial system
+          </p>
+
+          <h3 class="display">
+            2026
+          </h3>
+        </div>
+      </div>
+
+
+      <div class="newsletter-masonry">
+
+        {
+          newsletterIssues2026.map((issue) => (
+
+            <button
+              class:list={[
+                'newsletter-masonry-item',
+                {
+                  'newsletter-masonry-item--special':
+                    issue.special,
+                },
+              ]}
+              type="button"
+              data-newsletter-image={issue.image}
+              data-newsletter-title={issue.date}
+              aria-label={`Open ${issue.date} newsletter`}
+            >
+
+              <div class="newsletter-masonry-item__visual">
+
+                <img
+                  src={issue.image}
+                  alt={`${issue.date} Schneider Electric newsletter`}
+                  loading="lazy"
+                />
+
+                <div class="newsletter-masonry-item__overlay">
+
+                  <p class="newsletter-masonry-item__date">
+                    {issue.date}
+                  </p>
+
+                  <div class="newsletter-masonry-item__stories">
+
+                    {
+                      issue.stories.map((story) => (
+                        <span>{story}</span>
+                      ))
+                    }
+
+                  </div>
+
+                  <p class="newsletter-masonry-item__count">
+                    {issue.stories.length}
+                    {issue.stories.length === 1 ? ' story' : ' stories'}
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="newsletter-masonry-item__caption">
+
+                <span>{issue.date}</span>
+
+                <i aria-hidden="true">
+                  ↗
+                </i>
+
+              </div>
+
+            </button>
+
+          ))
+        }
+
+      </div>
+
+
+          <!-- =====================================================
+        2025
+    ====================================================== -->
+
+    <div class="newsletter-archive-year">
+
+      <div class="newsletter-archive-year__heading">
+        <span>01</span>
+
+        <div>
+          <p class="newsletter-kicker">
+            Earlier editorial system
+          </p>
+
+          <h3 class="display">
+            2025
+          </h3>
+        </div>
+      </div>
+
+
+      <div class="newsletter-masonry">
+
+        {
+          newsletterIssues2025.map((issue) => (
+
+            <button
+              class="newsletter-masonry-item"
+              type="button"
+              data-newsletter-image={issue.image}
+              data-newsletter-title={issue.date}
+              aria-label={`Open ${issue.date} newsletter`}
+            >
+
+              <div class="newsletter-masonry-item__visual">
+
+                <img
+                  src={issue.image}
+                  alt={`${issue.date} Schneider Electric newsletter`}
+                  loading="lazy"
+                />
+
+                <div class="newsletter-masonry-item__overlay">
+
+                  <p class="newsletter-masonry-item__date">
+                    {issue.date}
+                  </p>
+
+                  <div class="newsletter-masonry-item__stories">
+
+                    {
+                      issue.stories.map((story) => (
+                        <span>{story}</span>
+                      ))
+                    }
+
+                  </div>
+
+                  <p class="newsletter-masonry-item__count">
+                    {issue.stories.length}
+                    {issue.stories.length === 1 ? ' story' : ' stories'}
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="newsletter-masonry-item__caption">
+
+                <span>{issue.date}</span>
+
+                <i aria-hidden="true">
+                  ↗
+                </i>
+
+              </div>
+
+            </button>
+
+          ))
+        }
+
+      </div>
+
+    </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+      LIGHTBOX
+  ====================================================== -->
+
+  <div
+    class="newsletter-lightbox"
+    id="newsletter-lightbox"
+    aria-hidden="true"
+  >
+
+    <button
+      class="newsletter-lightbox__backdrop"
+      type="button"
+      aria-label="Close newsletter"
+      data-lightbox-close
+    ></button>
+
+
+    <div
+      class="newsletter-lightbox__dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="newsletter-lightbox-title"
+    >
+
+      <div class="newsletter-lightbox__header">
+
+        <p
+          class="newsletter-lightbox__title"
+          id="newsletter-lightbox-title"
+        >
+          Newsletter
+        </p>
+
+        <button
+          class="newsletter-lightbox__close"
+          type="button"
+          aria-label="Close newsletter"
+          data-lightbox-close
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <div class="newsletter-lightbox__scroll">
+
+        <img
+          class="newsletter-lightbox__image"
+          src=""
+          alt=""
+        />
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <script>
+    const lightbox = document.querySelector('#newsletter-lightbox');
+    const lightboxImage =
+      lightbox?.querySelector('.newsletter-lightbox__image');
+
+    const lightboxTitle =
+      lightbox?.querySelector('.newsletter-lightbox__title');
+
+    const items =
+      document.querySelectorAll('.newsletter-masonry-item');
+
+    const closeButtons =
+      lightbox?.querySelectorAll('[data-lightbox-close]');
+
+
+    function openLightbox(item) {
+      if (!lightbox || !lightboxImage || !lightboxTitle) return;
+
+      const image = item.dataset.newsletterImage;
+      const title = item.dataset.newsletterTitle;
+
+      lightboxImage.src = image;
+      lightboxImage.alt = `${title} newsletter`;
+      lightboxTitle.textContent = title;
+
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+
+      document.body.classList.add('newsletter-lightbox-open');
+    }
+
+
+    function closeLightbox() {
+      if (!lightbox || !lightboxImage) return;
+
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+
+      document.body.classList.remove('newsletter-lightbox-open');
+
+      setTimeout(() => {
+        if (!lightbox.classList.contains('is-open')) {
+          lightboxImage.src = '';
+        }
+      }, 250);
+    }
+
+
+    items.forEach((item) => {
+      item.addEventListener('click', () => {
+        openLightbox(item);
+      });
+    });
+
+
+    closeButtons?.forEach((button) => {
+      button.addEventListener('click', closeLightbox);
+    });
+
+
+    document.addEventListener('keydown', (event) => {
+      if (
+        event.key === 'Escape' &&
+        lightbox?.classList.contains('is-open')
+      ) {
+        closeLightbox();
+      }
+    });
+  </script>
+
+
+    <!-- =====================================================
+         03 — EDITORIAL WORKFLOW
+    ====================================================== -->
+
+    <section class="newsletter-section shell">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          Schneider Electric / Editorial Workflow
+        </p>
+
+        <div class="section-rule">
+          <span>⌁</span>
+        </div>
+
+      </div>
+
+
+      <div class="newsletter-section__intro">
+
+        <h2 class="display">
+          Activity to<br />
+          <span>Narrative.</span>
+        </h2>
+
+        <p>
+          The format was recurring, but the content was not. Each edition
+          required collecting, filtering and structuring a new set of inputs
+          before the visual production stage began.
+        </p>
+
+      </div>
+
+
+      <div class="newsletter-workflow">
+
+        {
+          workflow.map((step) => (
+
+            <article>
+
+              <span class="newsletter-workflow__number">
+                {step.number}
+              </span>
+
+              <div>
+                <h3>{step.label}</h3>
+                <p>{step.text}</p>
+              </div>
+
+            </article>
+
+          ))
+        }
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         04 — CONTENT ARCHITECTURE
+    ====================================================== -->
+
+    <section class="newsletter-section shell">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          Schneider Electric / Content Architecture
+        </p>
+
+        <div class="section-rule">
+          <span>⌁</span>
+        </div>
+
+      </div>
+
+
+      <div class="newsletter-section__intro">
+
+        <h2 class="display">
+          Stories Change.<br />
+          <span>Systems Hold.</span>
+        </h2>
+
+        <p>
+          Although the exact content changed every month, the newsletter
+          repeatedly needed to balance several types of activity without
+          allowing any single issue to become visually or editorially chaotic.
+        </p>
+
+      </div>
+
+
+      <div class="newsletter-category-grid">
+
+        {
+          contentCategories.map((category, index) => (
+
+            <article>
+
+              <span>
+                {String(index + 1).padStart(2, '0')}
+              </span>
+
+              <h3>{category}</h3>
+
+            </article>
+
+          ))
+        }
+
+      </div>
+
+    </section>
+
+    <!-- =====================================================
+         06 — ISSUE DECONSTRUCTION
+    ====================================================== -->
+
+    <section class="newsletter-section shell">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          Schneider Electric / Issue Deconstruction
+        </p>
+
+        <div class="section-rule">
+          <span>⌁</span>
+        </div>
+
+      </div>
+
+
+      <div class="newsletter-section__intro">
+
+        <h2 class="display">
+          Inside an<br />
+          <span>Issue.</span>
+        </h2>
+
+        <p>
+          A finished newsletter is the visible output, but the underlying work
+          is deciding what leads, what supports it and how much context each
+          story needs.
+        </p>
+
+      </div>
+
+
+      <div class="newsletter-deconstruction">
+
+        <div class="newsletter-deconstruction__visual">
+
+          <img
+            src="/images/newsletters/casestudy.webp"
+            alt="Annotated Schneider Electric newsletter"
+            loading="lazy"
+          />
+
+        </div>
+
+
+        <div class="newsletter-deconstruction__content">
+
+          <article>
+            <span>01</span>
+
+            <div>
+              <h3>Lead story</h3>
+              <p>
+                Highest visual prominence given to the update with the
+                strongest relevance for the month.
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <span>02</span>
+
+            <div>
+              <h3>Secondary updates</h3>
+              <p>
+                Supporting activities grouped without competing with the
+                primary story.
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <span>03</span>
+
+            <div>
+              <h3>Image selection</h3>
+              <p>
+                Photos used as evidence of activity while maintaining
+                enough visual variety across the issue.
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <span>04</span>
+
+            <div>
+              <h3>Body copy</h3>
+              <p>
+                Technical and internal information compressed into short,
+                scan-friendly communication.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         07 — DISTRIBUTION
+    ====================================================== -->
+
+    <section class="newsletter-section shell">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          Schneider Electric / Distribution
+        </p>
+
+        <div class="section-rule">
+          <span>⌁</span>
+        </div>
+
+      </div>
+
+
+      <div class="newsletter-section__intro">
+
+        <h2 class="display">
+          Beyond the<br />
+          <span>Issue.</span>
+        </h2>
+
+        <p>
+          Each issue was distributed across multiple internal communities,
+          with a mix of recurring and content-specific stakeholders tagged
+          according to the activities featured in that month.
+        </p>
+
+      </div>
+
+
+      <div class="newsletter-metrics">
+
+        <article>
+          <strong>12+</strong>
+          <span>Recurring editions</span>
+        </article>
+
+        <article>
+          <strong>8+</strong>
+          <span>Internal communities</span>
+        </article>
+
+        <article>
+          <strong>20+</strong>
+          <span>Stakeholders tagged</span>
+        </article>
+
+        <article>
+          <strong>Monthly</strong>
+          <span>Editorial cadence</span>
+        </article>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         08 — CYNLR
+    ====================================================== -->
+
+    <section class="newsletter-section shell" id="cynlr-newsletters">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          CynLr
+        </p>
+
+        <div class="section-rule">
+          <span>⌁</span>
+        </div>
+
+      </div>
+
+
+      <div class="newsletter-section__intro">
+
+        <h2 class="display">
+          Building the<br />
+          <span>perception.</span>
+        </h2>
+
+        <div class="newsletter-section__copy">
+
+          <p>
+            I approached the CynLr newsletter problem as a perception-engineering exercise rather than a generic editorial task. The same pool of company stories was filtered through four stakeholder lenses — talent, investors, vendors and customers — based on what each audience needed to validate before engaging further.
+          </p>
+          <p class="cynlr-hero__intro">
+            The work therefore began with the stakeholder question, not the available story: Do I want to build here? Can this scale? Where do we fit? Can this solve my problem? Content selection, sequencing, visual emphasis and calls to action were then shaped around that question.
+          </p>
+
+      </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+        09 — CYNLR EDITORIAL ARCHITECTURE
+    ====================================================== -->
+
+    <section class="newsletter-section shell">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          CynLr / Stakeholder Architecture
+        </p>
+
+        <div class="section-rule">
+          <span>⌁</span>
+        </div>
+
+      </div>
+
+
+      <div class="newsletter-section__intro">
+
+        <h2 class="display">
+          Four stakeholders.<br />
+          <span>Four perspectives.</span>
+        </h2>
+
+        <div class="newsletter-section__copy">
+
+          <p>
+            Each newsletter draws from the same underlying pool of company
+            activity, but the editorial logic changes with the reader. Stories
+            move up or down the hierarchy depending on whether they signal
+            technical depth, commercial traction, ecosystem relevance or
+            real-world manufacturing value.
+          </p>
+
+          <p>
+            The consistency comes from the decision framework, not from making
+            every edition look or read the same.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="newsletter-architecture">
+
+        <article>
+
+          <span>01</span>
+
+          <p class="newsletter-kicker">
+            Talent
+          </p>
+
+          <h3 class="display">
+            Do I want to build here?
+          </h3>
+
+          <p>
+            Prioritises hard-technology work, product progress, research depth,
+            global exposure and evidence that CynLr is a serious place to build
+            a technical career.
+          </p>
+
+          <button
+            class="newsletter-masonry-item newsletter-architecture__issue"
+            type="button"
+            data-newsletter-image="/images/newsletters/talent.webp"
+            data-newsletter-title="Talent / Do I want to build here?"
+            aria-label="Open Talent newsletter"
+          >
+            <div class="newsletter-masonry-item__visual">
+
+              <img
+                src="/images/newsletters/talent.webp"
+                alt="CynLr Talent newsletter"
+                loading="lazy"
+              />
+
+              <div class="newsletter-masonry-item__overlay">
+
+                <p class="newsletter-masonry-item__date">
+                  Talent
+                </p>
+
+                <div class="newsletter-masonry-item__stories">
+                  <span>Technical depth</span>
+                  <span>Research</span>
+                  <span>Career opportunity</span>
+                </div>
+
+                <p class="newsletter-masonry-item__count">
+                  Stakeholder Edition
+                </p>
+
+              </div>
+
+            </div>
+
+            <div class="newsletter-masonry-item__caption">
+              <span>View full issue</span>
+              <i aria-hidden="true">↗</i>
+            </div>
+          </button>
+
+        </article>
+
+
+        <article>
+
+          <span>02</span>
+
+          <p class="newsletter-kicker">
+            Investor
+          </p>
+
+          <h3 class="display">
+            Can this scale?
+          </h3>
+
+          <p>
+            Leads with capital confidence, expansion, technical defensibility
+            and market pull — the signals that turn innovation into a credible
+            growth story.
+          </p>
+
+          <button
+            class="newsletter-masonry-item newsletter-architecture__issue"
+            type="button"
+            data-newsletter-image="/images/newsletters/investor.webp"
+            data-newsletter-title="Investor / Can this scale?"
+            aria-label="Open Investor newsletter"
+          >
+            <div class="newsletter-masonry-item__visual">
+
+              <img
+                src="/images/newsletters/investor.webp"
+                alt="CynLr Investor newsletter"
+                loading="lazy"
+              />
+
+              <div class="newsletter-masonry-item__overlay">
+
+                <p class="newsletter-masonry-item__date">
+                  Investor
+                </p>
+
+                <div class="newsletter-masonry-item__stories">
+                  <span>Traction</span>
+                  <span>Defensibility</span>
+                  <span>Growth</span>
+                </div>
+
+                <p class="newsletter-masonry-item__count">
+                  Stakeholder Edition
+                </p>
+
+              </div>
+
+            </div>
+
+            <div class="newsletter-masonry-item__caption">
+              <span>View full issue</span>
+              <i aria-hidden="true">↗</i>
+            </div>
+          </button>
+
+        </article>
+
+
+        <article>
+
+          <span>03</span>
+
+          <p class="newsletter-kicker">
+            Vendor
+          </p>
+
+          <h3 class="display">
+            Where do we fit?
+          </h3>
+
+          <p>
+            Reframes CynLr as part of a wider robotics ecosystem,
+            foregrounding platform relationships, integration potential
+            and the points where partners can contribute.
+          </p>
+
+          <button
+            class="newsletter-masonry-item newsletter-architecture__issue"
+            type="button"
+            data-newsletter-image="/images/newsletters/vendor.webp"
+            data-newsletter-title="Vendor / Where do we fit?"
+            aria-label="Open Vendor newsletter"
+          >
+            <div class="newsletter-masonry-item__visual">
+
+              <img
+                src="/images/newsletters/vendor.webp"
+                alt="CynLr Vendor newsletter"
+                loading="lazy"
+              />
+
+              <div class="newsletter-masonry-item__overlay">
+
+                <p class="newsletter-masonry-item__date">
+                  Vendor
+                </p>
+
+                <div class="newsletter-masonry-item__stories">
+                  <span>Ecosystem</span>
+                  <span>Integration</span>
+                  <span>Partnership</span>
+                </div>
+
+                <p class="newsletter-masonry-item__count">
+                  Stakeholder Edition
+                </p>
+
+              </div>
+
+            </div>
+
+            <div class="newsletter-masonry-item__caption">
+              <span>View full issue</span>
+              <i aria-hidden="true">↗</i>
+            </div>
+          </button>
+
+        </article>
+
+
+        <article>
+
+          <span>04</span>
+
+          <p class="newsletter-kicker">
+            Customer
+          </p>
+
+          <h3 class="display">
+            Can this solve my problem?
+          </h3>
+
+          <p>
+            Prioritises enterprise validation, manufacturing relevance
+            and recognisable use cases so the reader can quickly connect
+            CynLr's capabilities to their own operational context.
+          </p>
+
+          <button
+            class="newsletter-masonry-item newsletter-architecture__issue"
+            type="button"
+            data-newsletter-image="/images/newsletters/customer.webp"
+            data-newsletter-title="Customer / Can this solve my problem?"
+            aria-label="Open Customer newsletter"
+          >
+            <div class="newsletter-masonry-item__visual">
+
+              <img
+                src="/images/newsletters/customer.webp"
+                alt="CynLr Customer newsletter"
+                loading="lazy"
+              />
+
+              <div class="newsletter-masonry-item__overlay">
+
+                <p class="newsletter-masonry-item__date">
+                  Customer
+                </p>
+
+                <div class="newsletter-masonry-item__stories">
+                  <span>Enterprise validation</span>
+                  <span>Manufacturing relevance</span>
+                  <span>Use-case proof</span>
+                </div>
+
+                <p class="newsletter-masonry-item__count">
+                  Stakeholder Edition
+                </p>
+
+              </div>
+
+            </div>
+
+            <div class="newsletter-masonry-item__caption">
+              <span>View full issue</span>
+              <i aria-hidden="true">↗</i>
+            </div>
+          </button>
+
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- =====================================================
+     10 — CYNLR DEEP DIVE
+    ====================================================== -->
+
+    <section class="newsletter-section shell">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          CynLr / Editorial Deep Dive
+        </p>
+
+        <div class="section-rule">
+          <span>⌁</span>
+        </div>
+
+      </div>
+
+
+      <div class="newsletter-section__intro">
+
+        <h2 class="display">
+          Content pool to<br />
+          <span>stakeholder angle.</span>
+        </h2>
+
+        <div class="newsletter-section__copy">
+
+          <p>
+            The deeper editorial task was not writing four versions of the same
+            newsletter. It was deciding which stories mattered to each
+            stakeholder, what those stories proved, how they should be ordered,
+            and what action the reader should be encouraged to take next.
+          </p>
+
+          <p>
+            The same update could therefore become a lead story for one audience,
+            supporting proof for another, or disappear entirely when it did not
+            answer that stakeholder's question.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="newsletter-deep-dive">
+
+        <div class="newsletter-deep-dive__steps">
+
+          <article>
+
+            <span>01</span>
+
+            <div>
+
+              <p class="newsletter-kicker">
+                Source / Content Pool
+              </p>
+
+              <h3 class="display">
+                What evidence is available?
+              </h3>
+
+              <p>
+                Start with the full pool of company activity: product releases,
+                customer visits, partnerships, research collaborations, funding,
+                events and expansion.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article>
+
+            <span>02</span>
+
+            <div>
+
+              <p class="newsletter-kicker">
+                Stakeholder Question
+              </p>
+
+              <h3 class="display">
+                What does this audience need proved?
+              </h3>
+
+              <p>
+                Define the perception gap first. The editorial angle follows
+                from the question the reader is trying to answer.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article>
+
+            <span>03</span>
+
+            <div>
+
+              <p class="newsletter-kicker">
+                Proof Hierarchy
+              </p>
+
+              <h3 class="display">
+                Which stories deserve priority?
+              </h3>
+
+              <p>
+                Rank stories according to their value for that audience. Lead
+                with the strongest proof signal, use secondary stories to
+                reinforce credibility, and remove information that does not
+                advance the argument.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article>
+
+            <span>04</span>
+
+            <div>
+
+              <p class="newsletter-kicker">
+                Editorial Treatment
+              </p>
+
+              <h3 class="display">
+                How should that proof be presented?
+              </h3>
+
+              <p>
+                Adapt hierarchy, density, imagery, labels and calls to action
+                to the reader: people-led for talent, metrics-led for investors,
+                ecosystem-led for vendors and enterprise proof-led for customers.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+        <div class="newsletter-deep-dive__visual">
+
+          <img
+            src="/images/newsletters/cynlr.webp"
+            alt="CynLr stakeholder editorial strategy"
+            loading="lazy"
+          />
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================================
+         11 — MY CONTRIBUTION
+    ====================================================== -->
+
+    <section class="newsletter-section shell">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          CynLr / What This Work Demonstrates
+        </p>
+
+        <div class="section-rule">
+          <span>⌁</span>
+        </div>
+
+      </div>
+
+
+      <div class="newsletter-contribution-grid">
+
+        <article>
+
+          <span>Editorial</span>
+
+          <ul>
+            <li>Content selection</li>
+            <li>Editorial planning</li>
+            <li>Information hierarchy</li>
+            <li>Recurring content systems</li>
+          </ul>
+
+        </article>
+
+
+        <article>
+
+          <span>Content</span>
+
+          <ul>
+            <li>Copy development</li>
+            <li>Technical information translation</li>
+            <li>Audience-facing messaging</li>
+            <li>Brand voice exploration</li>
+          </ul>
+
+        </article>
+
+
+        <article>
+
+          <span>Creative</span>
+
+          <ul>
+            <li>Newsletter visual systems</li>
+            <li>Template adaptation</li>
+            <li>Image selection</li>
+            <li>Cross-edition consistency</li>
+          </ul>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         NEXT
+    ====================================================== -->
+
+    <section class="newsletter-next shell">
+
+      <p class="eyebrow">
+        BACK TO
+      </p>
+
+      <a href="/work/content-strategy">
+
+        <div>
+
+          <h2 class="display">
+            Content<br />
+            <strong>Strategy.</strong>
+          </h2>
+
+        </div>
+
+        <i aria-hidden="true">
+          ↗
+        </i>
+
+      </a>
+
+    </section>
+
+  </main>
+
+</BaseLayout>

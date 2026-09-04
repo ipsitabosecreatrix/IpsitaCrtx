@@ -175,12 +175,22 @@
 
 
 .cs-card__visual {
-  height: 320px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
 
   overflow: hidden;
 
-  border-bottom:
-    1px solid var(--line-neutral);
+  background: transparent;
+}
+
+.cs-card__visual img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
 }
 
 
