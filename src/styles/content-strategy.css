@@ -193,6 +193,24 @@
   object-position: center;
 }
 
+.cs-year-end-video {
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  object-fit: cover;
+
+  border: 1px solid var(--line-neutral);
+  border-radius: var(--radius-card);
+
+  background: #000;
+}
+
+.cs-next h2 {
+  font-size: clamp(3.8rem, 17vw, 5rem);
+}
 
 .cs-card--wide
 .cs-card__visual {
@@ -570,11 +588,11 @@
   line-height: 0.86;
 }
 
-
 .cs-next strong {
+  font-family: inherit;
   font-weight: inherit;
+  font-style: inherit;
 }
-
 
 .cs-next i {
   padding-bottom: 10px;
